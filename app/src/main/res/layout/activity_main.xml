@@ -16,17 +16,16 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/Theme.Drawer.AppBarOverlay"
-                android:visibility="gone">
+                android:theme="@style/ToolBarDark">
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:popupTheme="@style/Theme.Drawer.PopupOverlay" />
+                    android:background="?attr/colorPrimary" />
             </com.google.android.material.appbar.AppBarLayout>
 
             <fragment
@@ -39,7 +38,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navGraph="@navigation/nav_drawer" />
+                app:navGraph="@navigation/nav_bottom" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <com.google.android.material.navigation.NavigationView
@@ -48,7 +47,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.Navigation"
             app:headerLayout="@layout/layout_nav_header"
+            app:insetForeground="@color/transparent"
             app:menu="@menu/menu_drawer" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

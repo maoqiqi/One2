@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.Drawer.NoActionBar">
+        <activity android:name=".ui.navigation.ProjectActivity" android:theme="@style/AppTheme.Navigation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity android:name=".ui.navigation.ProjectActivity" />-->
+        <activity android:name=".ui.navigation.UpdateActivity" />
+        <activity android:name=".ui.navigation.ScanCodeActivity" />
+        <activity android:name=".ui.navigation.ProblemActivity" />
+        <activity android:name=".ui.navigation.AboutActivity" />
     </application>
 
 </manifest>

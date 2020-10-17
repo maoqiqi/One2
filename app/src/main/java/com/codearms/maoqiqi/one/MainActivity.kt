@@ -1,17 +1,14 @@
 package com.codearms.maoqiqi.one
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityMainBinding
+import com.codearms.maoqiqi.one.ui.navigation.*
 
 /**
  * TODO
@@ -28,8 +25,11 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.lifecycleOwner = this
-
         window.statusBarColor = Color.TRANSPARENT
+        // 蒙层颜色
+        // binding.drawerLayout.setScrimColor(Color.RED)
+        // 状态栏颜色
+        binding.drawerLayout.setStatusBarBackgroundColor(Color.BLACK)
 
 //        val navController = findNavController(R.id.nav_host_fragment)
 //        val appBarConfiguration = AppBarConfiguration(
@@ -45,13 +45,17 @@ class MainActivity : BaseActivity() {
 //        }
 //        binding.navView.setupWithNavController(navController)
 
-//        setSupportActionBar(binding.toolbar)
-//        binding.drawerLayout.setScrimColor(Color.RED)
-//        binding.drawerLayout.setStatusBarBackgroundColor(Color.GREEN)
+        setSupportActionBar(binding.toolbar)
 
 //        navController = findNavController(R.id.nav_host_fragment)
 //        appBarConfiguration = AppBarConfiguration(
-//            setOf(R.id.nav_project, R.id.nav_update, R.id.nav_scan_code, R.id.nav_problem, R.id.nav_about), binding.drawerLayout
+//            setOf(
+//                R.id.nav_project,
+//                R.id.nav_update,
+//                R.id.nav_scan_code,
+//                R.id.nav_problem,
+//                R.id.nav_about
+//            ), binding.drawerLayout
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 //        binding.navView.setupWithNavController(navController)
@@ -59,9 +63,22 @@ class MainActivity : BaseActivity() {
 //        val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.toolbar, R.string.drawer_open, R.string.drawer_close)
 //        toggle.syncState()
 //        binding.drawerLayout.addDrawerListener(toggle)
+
+        binding.navView.setNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))
+                R.id.nav_update -> startActivity(Intent(this, UpdateActivity::class.java))
+                R.id.nav_scan_code -> startActivity(Intent(this, ScanCodeActivity::class.java))
+                R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
+                R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
+            }
+            true
+        }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START))
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        else super.onBackPressed()
     }
 }
