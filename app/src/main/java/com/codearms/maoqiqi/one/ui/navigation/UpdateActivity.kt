@@ -12,6 +12,6 @@ class UpdateActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.lifecycleOwner = this
-        binding.text.text = "ProjectFragment"
+        setSupportActionBar(binding.toolbar)
     }
 }

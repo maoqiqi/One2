@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.codearms.maoqiqi.one.R
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityProjectBinding
+import com.codearms.maoqiqi.one.utils.ShareUtils
 
 /**
  * TODO
@@ -18,7 +19,11 @@ class ProjectActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.lifecycleOwner = this
         window.statusBarColor = Color.TRANSPARENT
+        binding.lifecycleOwner = this
+        setSupportActionBar(binding.toolbar)
+        binding.fabShare.setOnClickListener {
+            ShareUtils.shareText(this, getString(R.string.share_download_content, getString(R.string.download_url)))
+        }
     }
 }

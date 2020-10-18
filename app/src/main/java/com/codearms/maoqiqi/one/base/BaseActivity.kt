@@ -1,5 +1,6 @@
 package com.codearms.maoqiqi.one.base
 
+import android.view.MenuItem
 import android.view.animation.Animation
 import android.widget.ImageView
 import android.widget.TextView
@@ -25,5 +26,10 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun <T : ViewDataBinding> binding(@LayoutRes resId: Int): Lazy<T> = lazy {
         DataBindingUtil.setContentView(this, resId)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) onBackPressed()
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -9,18 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.navigation.ProjectActivity" android:theme="@style/AppTheme.Navigation">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity android:name=".ui.navigation.ProjectActivity" />-->
-        <activity android:name=".ui.navigation.UpdateActivity" />
-        <activity android:name=".ui.navigation.ScanCodeActivity" />
-        <activity android:name=".ui.navigation.ProblemActivity" />
-        <activity android:name=".ui.navigation.AboutActivity" />
+        <activity
+            android:name=".ui.navigation.ProjectActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
+            android:name=".ui.navigation.UpdateActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
+            android:name=".ui.navigation.ScanCodeActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
+            android:name=".ui.navigation.ProblemActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
+            android:name=".ui.navigation.AboutActivity"
+            android:theme="@style/AppTheme.Navigation" />
     </application>
 
 </manifest>
