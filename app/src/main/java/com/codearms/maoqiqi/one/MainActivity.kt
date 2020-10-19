@@ -57,13 +57,8 @@ class MainActivity : BaseActivity() {
 
     fun associateToolbar(toolbar: Toolbar) {
         setSupportActionBar(toolbar)
-        val toggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            toolbar,
-            R.string.drawer_open,
-            R.string.drawer_close
-        )
+        val toggle =
+            ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close)
         toggle.syncState()
         binding.drawerLayout.addDrawerListener(toggle)
     }
@@ -80,11 +75,10 @@ class MainActivity : BaseActivity() {
     @SuppressLint("RestrictedApi")
     private fun setupBottomNavigationMenuView() {
         val navController = findNavController(R.id.nav_host_fragment)
-        val menuView: BottomNavigationMenuView =
-            binding.bottomNavView.getChildAt(0) as BottomNavigationMenuView
+        val menuView: BottomNavigationMenuView = binding.bottomNavView.getChildAt(0) as BottomNavigationMenuView
         for (i in 0 until menuView.childCount) {
             badgeViews[i] = LayoutInflater.from(this).inflate(R.layout.layout_badge, null)
-            val itemView = menuView.getChildAt(i) as BottomNavigationItemView
+            val itemView: BottomNavigationItemView = menuView.getChildAt(i) as BottomNavigationItemView
             val colorStateList: ColorStateList? = ContextCompat.getColorStateList(this, colors[i])
             itemView.setIconTintList(colorStateList)
             itemView.setTextColor(colorStateList)
