@@ -6,7 +6,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
@@ -16,7 +15,7 @@ import androidx.databinding.ViewDataBinding
  * date: 2020/10/16 14:31
  * version v1.0.0
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : LogActivity() {
 
     private var dialog: AlertDialog? = null
     private var iv: ImageView? = null

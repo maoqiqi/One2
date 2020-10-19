@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.codearms.maoqiqi.one.MainActivity
 import com.codearms.maoqiqi.one.R
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.databinding.FragmentMusicBinding
@@ -25,5 +26,6 @@ class MusicFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.text.text = "MusicFragment"
+        (activity as MainActivity).associateToolbar(binding.toolbar)
     }
 }

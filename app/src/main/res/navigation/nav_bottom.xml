@@ -8,30 +8,30 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.codearms.maoqiqi.one.ui.home.HomeFragment"
-        android:label="首页"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_news"
         android:name="com.codearms.maoqiqi.one.ui.news.NewsFragment"
-        android:label="新闻"
+        android:label="@string/news"
         tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/nav_book"
         android:name="com.codearms.maoqiqi.one.ui.book.BookFragment"
-        android:label="图书"
+        android:label="@string/book"
         tools:layout="@layout/fragment_book" />
 
     <fragment
         android:id="@+id/nav_music"
         android:name="com.codearms.maoqiqi.one.ui.music.MusicFragment"
-        android:label="音乐"
+        android:label="@string/music"
         tools:layout="@layout/fragment_music" />
 
     <fragment
         android:id="@+id/nav_movie"
         android:name="com.codearms.maoqiqi.one.ui.movie.MovieFragment"
-        android:label="影视"
+        android:label="@string/movie"
         tools:layout="@layout/fragment_movie" />
 </navigation>

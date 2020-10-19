@@ -8,6 +8,17 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorBook"
+            android:theme="@style/ToolBarDark"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:title="@string/book"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/text"
             android:layout_width="match_parent"

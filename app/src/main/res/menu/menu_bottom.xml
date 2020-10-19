@@ -4,25 +4,25 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_tab_home_normal"
-        android:title="首页" />
+        android:title="@string/home" />
 
     <item
         android:id="@+id/nav_news"
         android:icon="@drawable/ic_tab_news_normal"
-        android:title="新闻" />
+        android:title="@string/news" />
 
     <item
         android:id="@+id/nav_book"
         android:icon="@drawable/ic_tab_book_normal"
-        android:title="图书" />
+        android:title="@string/book" />
 
     <item
         android:id="@+id/nav_music"
         android:icon="@drawable/ic_tab_music_normal"
-        android:title="音乐" />
+        android:title="@string/music" />
 
     <item
         android:id="@+id/nav_movie"
         android:icon="@drawable/ic_tab_movie_normal"
-        android:title="影视" />
+        android:title="@string/movie" />
 </menu>
