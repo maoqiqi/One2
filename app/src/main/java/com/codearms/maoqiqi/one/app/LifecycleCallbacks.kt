@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference
 /**
  * 监控应用生命周期
  * author: March
- * date: 2020/10/16 14:35
+ * date: 2020-11-01 21:01
  * version v1.0.0
  */
 object LifecycleCallbacks : Application.ActivityLifecycleCallbacks {

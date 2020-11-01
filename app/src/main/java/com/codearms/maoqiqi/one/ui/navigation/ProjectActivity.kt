@@ -10,8 +10,8 @@ import com.codearms.maoqiqi.one.utils.ShareUtils
 /**
  * TODO
  * author: March
- * date: 2020-10-16 15:02
- * version v1.3.0
+ * date: 2020-11-01 21:01
+ * version v1.0.0
  */
 class ProjectActivity : BaseActivity() {
 

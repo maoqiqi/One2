@@ -12,7 +12,7 @@
             android:id="@+id/nav_update"
             android:icon="@drawable/ic_nav_update"
             android:title="更新说明"
-            app:actionLayout="@layout/layout_nav_badge" />
+            app:actionLayout="@layout/layout_badge_nav" />
 
         <item
             android:id="@+id/nav_scan_code"

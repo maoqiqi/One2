@@ -11,7 +11,7 @@ import com.codearms.maoqiqi.one.app.LogLifecycleObserver
 /**
  * Log activity
  * author: March
- * date: 2020/10/16 14:37
+ * date: 2020-11-01 21:01
  * version v1.0.0
  */
 abstract class LogActivity : AppCompatActivity() {

@@ -7,8 +7,8 @@ import com.codearms.maoqiqi.one.base.BaseViewModel
 /**
  * TODO
  * author: March
- * date: 2020-10-16 15:18
- * version v1.3.0
+ * date: 2020-11-01 21:01
+ * version v1.0.0
  */
 class HomeViewModel : BaseViewModel() {
 

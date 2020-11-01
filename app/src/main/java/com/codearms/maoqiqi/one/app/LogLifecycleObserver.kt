@@ -8,7 +8,7 @@ import androidx.lifecycle.OnLifecycleEvent
 /**
  * 生命周期观察者
  * author: March
- * date: 2020/10/16 14:36
+ * date: 2020-11-01 21:01
  * version v1.0.0
  */
 class LogLifecycleObserver(private val tag: String = "LogLifecycleObserver") : LifecycleObserver {
