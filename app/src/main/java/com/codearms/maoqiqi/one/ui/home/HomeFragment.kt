@@ -11,7 +11,7 @@ import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.databinding.FragmentHomeBinding
 
 /**
- * TODO
+ * 首页
  * author: March
  * date: 2020-11-01 21:01
  * version v1.0.0
@@ -27,10 +27,7 @@ class HomeFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.lifecycleOwner = viewLifecycleOwner
-        viewModel.text.observe(viewLifecycleOwner, {
-            binding.text.text = it
-        })
+        binding.text.text = "HomeFragment"
         (activity as MainActivity).associateToolbar(binding.toolbar)
     }
 }

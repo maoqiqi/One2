@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
 /**
- * TODO
+ * MainActivity
  * author: March
  * date: 2020-11-01 21:01
  * version v1.0.0
