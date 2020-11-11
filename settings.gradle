@@ -1,2 +1,4 @@
 include ':app'
+include ':movie'
+//include ':common'
 rootProject.name = "One"

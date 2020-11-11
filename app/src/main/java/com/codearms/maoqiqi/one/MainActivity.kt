@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.navigation.findNavController
+import com.alibaba.android.arouter.launcher.ARouter
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityMainBinding
 import com.codearms.maoqiqi.one.ui.navigation.*
@@ -74,6 +75,9 @@ class MainActivity : BaseActivity() {
 
     @SuppressLint("RestrictedApi")
     private fun setupBottomNavigationMenuView() {
+        ARouter.openLog()
+        ARouter.openDebug()
+        ARouter.init(application)
         val navController = findNavController(R.id.nav_host_fragment)
         val menuView: BottomNavigationMenuView = binding.bottomNavView.getChildAt(0) as BottomNavigationMenuView
         for (i in 0 until menuView.childCount) {
@@ -103,7 +107,8 @@ class MainActivity : BaseActivity() {
                 }
                 R.id.nav_scan_code -> startActivity(Intent(this, ScanCodeActivity::class.java))
                 R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
-                R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
+                // R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
+                R.id.nav_about -> ARouter.getInstance().build("/movie/main").navigation()
             }
             true
         }
