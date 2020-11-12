@@ -1,6 +1,5 @@
-include ':common'
-include ':navigation'
 include ':app'
+include ':common'
 include ':movie'
-//include ':common'
+include ':navigation'
 rootProject.name = "One"

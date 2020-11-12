@@ -1,15 +1,20 @@
 package com.codearms.maoqiqi.one.movie
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.codearms.maoqiqi.one.base.BaseActivity
+import com.codearms.maoqiqi.one.movie.databinding.ActivityMovieBinding
 
 @Route(path = "/movie/main")
-class MovieActivity : AppCompatActivity() {
+class MovieActivity : BaseActivity() {
+
+    private val binding: ActivityMovieBinding by binding(R.layout.activity_movie)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movie)
+        binding.lifecycleOwner = this
+        setSupportActionBar(binding.toolbar)
 
         var params: String? = "aa"
         params = null

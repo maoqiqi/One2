@@ -5,7 +5,7 @@
     <application>
         <activity
             android:name=".MovieActivity"
-            android:theme="@style/Theme.MaterialComponents.Light" />
+            android:theme="@style/AppTheme.Movie" />
     </application>
 
 </manifest>
