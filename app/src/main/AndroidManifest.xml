@@ -28,9 +28,6 @@
         <activity
             android:name=".ui.navigation.ProblemActivity"
             android:theme="@style/AppTheme.Navigation" />
-        <activity
-            android:name=".ui.navigation.AboutActivity"
-            android:theme="@style/AppTheme.Navigation" />
     </application>
 
 </manifest>

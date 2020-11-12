@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5F7C8A</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#5F7C8A</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- 页面背景的颜色 -->
+    <color name="colorPageBackground">#f2f2f5</color>
+    <color name="navigationChecked">#f2f2f2</color>
+    <!--文字黑色-->
+    <color name="colorTextBlack">#191919</color>
+    <!--文字灰色-->
+    <color name="colorTextGray">#999999</color>
+    <color name="colorTextGrayDark">#666666</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!--薄雾/Dust Red-->
+    <color name="red_0">#fff1f0</color>
+    <color name="red_1">#ffccc7</color>
+    <color name="red_2">#ffa39e</color>
+    <color name="red_3">#ff7875</color>
+    <color name="red_4">#ff4d4f</color>
+    <color name="red_5">#f5222d</color>
+    <color name="red_6">#cf1322</color>
+    <color name="red_7">#a8071a</color>
+    <color name="red_8">#820014</color>
+    <color name="red_9">#5c0011</color>
+
+    <!--火山/Volcano-->
+    <color name="volcano_0">#fff2e8</color>
+    <color name="volcano_1">#ffd8bf</color>
+    <color name="volcano_2">#ffbb96</color>
+    <color name="volcano_3">#ff9c6e</color>
+    <color name="volcano_4">#ff7a45</color>
+    <color name="volcano_5">#fa541c</color>
+    <color name="volcano_6">#fa541c</color>
+    <color name="volcano_7">#ad2102</color>
+    <color name="volcano_8">#871400</color>
+    <color name="volcano_9">#610b00</color>
+
+    <!--日暮/Sunset Orange-->
+    <color name="orange_0">#fff7e6</color>
+    <color name="orange_1">#ffe7ba</color>
+    <color name="orange_2">#ffd591</color>
+    <color name="orange_3">#ffc069</color>
+    <color name="orange_4">#ffa940</color>
+    <color name="orange_5">#fa8c16</color>
+    <color name="orange_6">#d46b08</color>
+    <color name="orange_7">#ad4e00</color>
+    <color name="orange_8">#873800</color>
+    <color name="orange_9">#612500</color>
+
+    <!--日出/Sunrise Yellow-->
+    <color name="yellow_0">#feffe6</color>
+    <color name="yellow_1">#ffffb8</color>
+    <color name="yellow_2">#fffb8f</color>
+    <color name="yellow_3">#fff566</color>
+    <color name="yellow_4">#ffec3d</color>
+    <color name="yellow_5">#fadb14</color>
+    <color name="yellow_6">#d4b106</color>
+    <color name="yellow_7">#ad8b00</color>
+    <color name="yellow_8">#876800</color>
+    <color name="yellow_9">#614700</color>
+
+    <!--极光绿/Green-->
+    <color name="green_0">#f6ffed</color>
+    <color name="green_1">#d9f7be</color>
+    <color name="green_2">#b7eb8f</color>
+    <color name="green_3">#95de64</color>
+    <color name="green_4">#73d13d</color>
+    <color name="green_5">#52c41a</color>
+    <color name="green_6">#389e0d</color>
+    <color name="green_7">#237804</color>
+    <color name="green_8">#135200</color>
+    <color name="green_9">#092b00</color>
+
+    <!--明青/Cyan-->
+    <color name="cyan_0">#e6fffb</color>
+    <color name="cyan_1">#b5f5ec</color>
+    <color name="cyan_2">#87e8de</color>
+    <color name="cyan_3">#5cdbd3</color>
+    <color name="cyan_4">#36cfc9</color>
+    <color name="cyan_5">#13c2c2</color>
+    <color name="cyan_6">#08979c</color>
+    <color name="cyan_7">#006d75</color>
+    <color name="cyan_8">#00474f</color>
+    <color name="cyan_9">#002329</color>
+
+    <!--拂晓蓝/Daybreak Blue-->
+    <color name="blue_0">#002329</color>
+    <color name="blue_1">#bae7ff</color>
+    <color name="blue_2">#bae7ff</color>
+    <color name="blue_3">#69c0ff</color>
+    <color name="blue_4">#40a9ff</color>
+    <color name="blue_5">#1890ff</color>
+    <color name="blue_6">#096dd9</color>
+    <color name="blue_7">#0050b3</color>
+    <color name="blue_8">#003a8c</color>
+    <color name="blue_9">#002766</color>
+
+    <!--酱紫/Purple-->
+    <color name="purple_0">#f9f0ff</color>
+    <color name="purple_1">#efdbff</color>
+    <color name="purple_2">#d3adf7</color>
+    <color name="purple_3">#b37feb</color>
+    <color name="purple_4">#9254de</color>
+    <color name="purple_5">#722ed1</color>
+    <color name="purple_6">#531dab</color>
+    <color name="purple_7">#391085</color>
+    <color name="purple_8">#22075e</color>
+    <color name="purple_9">#120338</color>
+
+    <!--法式洋红/Magenta-->
+    <color name="magenta_0">#fff0f6</color>
+    <color name="magenta_1">#ffd6e7</color>
+    <color name="magenta_2">#ffadd2</color>
+    <color name="magenta_3">#ff85c0</color>
+    <color name="magenta_4">#f759ab</color>
+    <color name="magenta_5">#eb2f96</color>
+    <color name="magenta_6">#c41d7f</color>
+    <color name="magenta_7">#9e1068</color>
+    <color name="magenta_8">#780650</color>
+    <color name="magenta_9">#520339</color>
+
+    <!--灰/Gray-->
+    <color name="gray_0">#ffffff</color>
+    <color name="gray_1">#fafafa</color>
+    <color name="gray_2">#f5f5f5</color>
+    <color name="gray_3">#e8e8e8</color>
+    <color name="gray_4">#d9d9d9</color>
+    <color name="gray_5">#83888f</color>
+    <color name="gray_6">#6c6c6c</color>
+    <color name="gray_7">#525252</color>
+    <color name="gray_8">#141414</color>
+    <color name="gray_9"></color>
+
+    <!--Status Color-->
+    <color name="success">#67c23a</color>
+    <color name="warning">#e6a23c</color>
+    <color name="danger">#f56c6c</color>
+    <color name="info">#909399</color>
+
+    <!--Text Color-->
+    <color name="text_0">#c0c4cc</color>
+    <color name="text_1">#909399</color>
+    <color name="text_2">#606266</color>
+    <color name="text_3">#303133</color>
+
+    <!--Line Color-->
+    <color name="line_0">#f2f6fc</color>
+    <color name="line_1">#ebeef5</color>
+    <color name="line_2">#e4e7ed</color>
+    <color name="line_3">#dcdfe6</color>
+</resources>

@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
@@ -10,12 +10,12 @@ android {
     buildToolsVersion BUILDTOOLS_VERSION
 
     defaultConfig {
-        applicationId "com.codearms.maoqiqi.one"
         minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -34,45 +34,25 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api project(':common')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
-    // navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.1"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.1"
-    // viewpager2
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
-    // tablayout
-    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
-    // viewModels
-    implementation 'androidx.fragment:fragment-ktx:1.2.5'
-    // lifecycle
-    // implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
-    // implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    // network
-    implementation 'com.squareup.okio:okio:2.8.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
-    // json
-    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
-    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'
-    // glide
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    // Cannot access 'androidx.lifecycle.HasDefaultViewModelProviderFactory'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     // ARouter
     implementation 'com.alibaba:arouter-api:1.5.1'
-    implementation project(':movie')
-    implementation project(':navigation')
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
     // test
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

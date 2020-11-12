@@ -1,4 +1,4 @@
-package com.codearms.maoqiqi.one.common
+package com.codearms.maoqiqi.one
 
 import org.junit.Test
 

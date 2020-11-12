@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -98,6 +99,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setNavigationView() {
+        Log.e("info",A.A)
+        Log.e("info",B.B)
+        Log.e("info",getString(R.string.about))
         binding.navView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))
@@ -106,7 +110,8 @@ class MainActivity : BaseActivity() {
                     startActivity(Intent(this, UpdateActivity::class.java))
                 }
                 R.id.nav_scan_code -> startActivity(Intent(this, ScanCodeActivity::class.java))
-                R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
+                // R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
+                R.id.nav_problem -> ARouter.getInstance().build("/navigation/about").navigation()
                 // R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
                 R.id.nav_about -> ARouter.getInstance().build("/movie/main").navigation()
             }

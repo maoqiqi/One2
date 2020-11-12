@@ -1,0 +1,6 @@
+<resources>
+    <style name="AppTheme.Navigation">
+        <item name="colorPrimary">@color/colorNavigation</item>
+        <item name="colorPrimaryDark">@color/colorNavigation</item>
+    </style>
+</resources>
