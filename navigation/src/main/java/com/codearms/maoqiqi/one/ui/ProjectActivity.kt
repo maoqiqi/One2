@@ -1,10 +1,11 @@
-package com.codearms.maoqiqi.one.ui.navigation
+package com.codearms.maoqiqi.one.ui
 
 import android.graphics.Color
 import android.os.Bundle
-import com.codearms.maoqiqi.one.R
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseActivity
-import com.codearms.maoqiqi.one.databinding.ActivityProjectBinding
+import com.codearms.maoqiqi.one.navigation.R
+import com.codearms.maoqiqi.one.navigation.databinding.ActivityProjectBinding
 import com.codearms.maoqiqi.one.utils.ShareUtils
 
 /**
@@ -13,6 +14,7 @@ import com.codearms.maoqiqi.one.utils.ShareUtils
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
+@Route(path = "/navigation/project")
 class ProjectActivity : BaseActivity() {
 
     private val binding: ActivityProjectBinding by binding(R.layout.activity_project)

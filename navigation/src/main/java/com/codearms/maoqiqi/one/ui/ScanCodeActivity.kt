@@ -1,9 +1,10 @@
-package com.codearms.maoqiqi.one.ui.navigation
+package com.codearms.maoqiqi.one.ui
 
 import android.os.Bundle
-import com.codearms.maoqiqi.one.R
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseActivity
-import com.codearms.maoqiqi.one.databinding.ActivityScanCodeBinding
+import com.codearms.maoqiqi.one.navigation.R
+import com.codearms.maoqiqi.one.navigation.databinding.ActivityScanCodeBinding
 
 /**
  * TODO
@@ -11,6 +12,7 @@ import com.codearms.maoqiqi.one.databinding.ActivityScanCodeBinding
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
+@Route(path = "/navigation/scan_code")
 class ScanCodeActivity : BaseActivity() {
 
     private val binding: ActivityScanCodeBinding by binding(R.layout.activity_scan_code)

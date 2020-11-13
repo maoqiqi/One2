@@ -3,4 +3,10 @@
         <item name="colorPrimary">@color/colorNavigation</item>
         <item name="colorPrimaryDark">@color/colorNavigation</item>
     </style>
+
+    <!--项目描述标题栏展开样式-->
+    <style name="projectExpandedTitleTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/transparent</item>
+    </style>
 </resources>

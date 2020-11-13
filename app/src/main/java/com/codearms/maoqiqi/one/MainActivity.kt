@@ -1,11 +1,9 @@
 package com.codearms.maoqiqi.one
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -16,7 +14,6 @@ import androidx.navigation.findNavController
 import com.alibaba.android.arouter.launcher.ARouter
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityMainBinding
-import com.codearms.maoqiqi.one.ui.navigation.*
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
@@ -99,17 +96,17 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setNavigationView() {
-        Log.e("info",A.A)
-        Log.e("info",B.B)
-        Log.e("info",getString(R.string.about))
         binding.navView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))
+                // R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))
+                R.id.nav_project -> ARouter.getInstance().build("/navigation/project").navigation()
                 R.id.nav_update -> {
                     binding.navView.menu.findItem(R.id.nav_update).actionView.visibility = View.GONE
-                    startActivity(Intent(this, UpdateActivity::class.java))
+                    // startActivity(Intent(this, UpdateActivity::class.java))
+                    ARouter.getInstance().build("/navigation/update").navigation()
                 }
-                R.id.nav_scan_code -> startActivity(Intent(this, ScanCodeActivity::class.java))
+                // R.id.nav_scan_code -> startActivity(Intent(this, ScanCodeActivity::class.java))
+                R.id.nav_scan_code -> ARouter.getInstance().build("/navigation/scan_code").navigation()
                 // R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
                 R.id.nav_problem -> ARouter.getInstance().build("/navigation/about").navigation()
                 // R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))

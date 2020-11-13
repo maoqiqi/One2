@@ -1,0 +1,44 @@
+// 全局配置信息及第三方依赖统一管理
+project.ext {
+    setDefaultConfig = { extension ->
+        android {
+            compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+            buildToolsVersion BUILDTOOLS_VERSION
+
+            defaultConfig {
+                minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
+                targetSdkVersion Integer.parseInt(TARGET_SDK_VERSION)
+                versionCode 1
+                versionName "1.0.0"
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+            sourceSets {
+//                main {
+//                    if (IS_MODULE.toBoolean() && file('src/main/module/AndroidManifest.xml').exists()) {
+//                        manifest.srcFile 'src/main/module/AndroidManifest.xml'
+//                    } else {
+//                        manifest.srcFile 'src/main/AndroidManifest.xml'
+//                    }
+//                }
+            }
+
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            kotlinOptions {
+                jvmTarget = '1.8'
+            }
+            buildFeatures {
+                dataBinding = true
+            }
+        }
+    }
+}

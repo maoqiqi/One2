@@ -34,17 +34,17 @@ class MovieFragment : BaseFragment() {
         (activity as MainActivity).associateToolbar(binding.toolbar)
         setHasOptionsMenu(true)
 
-        for (i in titles.indices) {
-            adapter.addFragment(titles[i], getFragment(i))
-        }
-
-        binding.viewPager.adapter = adapter
-        binding.viewPager.offscreenPageLimit = 1
-        binding.viewPager.currentItem = 0
-        binding.viewPager.addOnPageChangeListener(MyPageChangeListener())
-
-        binding.tabLayout.setTabData(titles)
-        binding.tabLayout.setOnTabSelectListener(MyTabSelectListener())
+//        for (i in titles.indices) {
+//            adapter.addFragment(titles[i], getFragment(i))
+//        }
+//
+//        binding.viewPager.adapter = adapter
+//        binding.viewPager.offscreenPageLimit = 1
+//        binding.viewPager.currentItem = 0
+//        binding.viewPager.addOnPageChangeListener(MyPageChangeListener())
+//
+//        binding.tabLayout.setTabData(titles)
+//        binding.tabLayout.setOnTabSelectListener(MyTabSelectListener())
     }
 
     private fun getFragment(type: Int): Fragment {
