@@ -72,10 +72,12 @@ dependencies {
     // ARouter
     implementation 'com.alibaba:arouter-api:1.5.1'
 
+    // 资源冲突跟引入的先后顺序有关
     implementation project(':movie')
     if (IS_MODULE.toBoolean()) {
         implementation project(':navigation')
     }
+
     // test
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

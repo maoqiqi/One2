@@ -14,13 +14,13 @@ project.ext {
             }
 
             sourceSets {
-//                main {
-//                    if (IS_MODULE.toBoolean() && file('src/main/module/AndroidManifest.xml').exists()) {
-//                        manifest.srcFile 'src/main/module/AndroidManifest.xml'
-//                    } else {
-//                        manifest.srcFile 'src/main/AndroidManifest.xml'
-//                    }
-//                }
+                main {
+                    if (IS_MODULE.toBoolean() && file('src/main/module/AndroidManifest.xml').exists()) {
+                        manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                    } else {
+                        manifest.srcFile 'src/main/AndroidManifest.xml'
+                    }
+                }
             }
 
             buildTypes {

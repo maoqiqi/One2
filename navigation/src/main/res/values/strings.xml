@@ -1,4 +1,5 @@
 <resources>
+    <string name="name">测试navigation</string>
     <string name="app_name">navigation</string>
 
     <string name="scan_code_to_download">扫码下载</string>

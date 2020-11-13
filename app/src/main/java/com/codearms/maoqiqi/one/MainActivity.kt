@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -96,6 +97,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setNavigationView() {
+        Log.e("info", getString(R.string.name))
+        Log.e("info", TestConflict.A)
         binding.navView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 // R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))

@@ -1,20 +1,4 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="android:windowTranslucentStatus">true</item>-->
-        <!--去除顶部下拉时的半月形阴影和上下滑动顶部和底部的虚化-->
-        <item name="android:overScrollMode">never</item>
-    </style>
-
-    <style name="AppTheme.Navigation">
-        <item name="colorPrimary">@color/colorNavigation</item>
-        <item name="colorPrimaryDark">@color/colorNavigation</item>
-    </style>
-
     <style name="Theme.Drawer" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -32,15 +16,5 @@
     <style name="Theme.Drawer.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="ToolBar" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="ToolBarDark" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <!--项目描述标题栏展开样式-->
-    <style name="projectExpandedTitleTextAppearance" parent="@android:style/TextAppearance">
-        <item name="android:textSize">22sp</item>
-        <item name="android:textColor">@color/transparent</item>
     </style>
 </resources>

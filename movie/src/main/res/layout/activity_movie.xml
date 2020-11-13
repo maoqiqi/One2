@@ -18,6 +18,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_back"
-            app:title="@string/about" />
+            app:title="@string/name" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

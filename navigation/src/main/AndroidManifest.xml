@@ -2,22 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codearms.maoqiqi.one.navigation">
 
-    <application>
-        <activity
-            android:name="com.codearms.maoqiqi.one.ui.ProjectActivity"
-            android:theme="@style/AppTheme.Navigation" />
-        <activity
-            android:name="com.codearms.maoqiqi.one.ui.UpdateActivity"
-            android:theme="@style/AppTheme.Navigation" />
-        <activity
-            android:name="com.codearms.maoqiqi.one.ui.ScanCodeActivity"
-            android:theme="@style/AppTheme.Navigation" />
-        <activity
-            android:name="com.codearms.maoqiqi.one.ui.ProblemActivity"
-            android:theme="@style/AppTheme.Navigation" />
-        <activity
-            android:name="com.codearms.maoqiqi.one.ui.AboutActivity"
-            android:theme="@style/AppTheme.Navigation" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.Navigation">
+        <activity android:name="com.codearms.maoqiqi.one.ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.codearms.maoqiqi.one.ui.ProjectActivity" />
+        <activity android:name="com.codearms.maoqiqi.one.ui.UpdateActivity" />
+        <activity android:name="com.codearms.maoqiqi.one.ui.ScanCodeActivity" />
+        <activity android:name="com.codearms.maoqiqi.one.ui.ProblemActivity" />
+        <activity android:name="com.codearms.maoqiqi.one.ui.AboutActivity" />
     </application>
 
 </manifest>
