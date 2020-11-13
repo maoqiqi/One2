@@ -115,7 +115,7 @@ class MainActivity : BaseActivity() {
                 // R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
                 R.id.nav_problem -> ARouter.getInstance().build("/navigation/about").navigation()
                 // R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
-                R.id.nav_about -> ARouter.getInstance().build("/movie/main").navigation()
+                R.id.nav_about -> ARouter.getInstance().build("/movie/movie").navigation()
             }
             true
         }

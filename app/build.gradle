@@ -34,6 +34,11 @@ android {
     buildFeatures {
         dataBinding = true
     }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -58,22 +63,23 @@ dependencies {
     // implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     // implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     // network
-    implementation 'com.squareup.okio:okio:2.8.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
-    // json
-    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
-    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'
-    // glide
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+//    implementation 'com.squareup.okio:okio:2.8.0'
+//    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+//    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
+//    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+//    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+//    // json
+//    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
+//    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'
+//    // glide
+//    implementation 'com.github.bumptech.glide:glide:4.11.0'
+//    kapt 'com.github.bumptech.glide:compiler:4.11.0'
     // ARouter
     implementation 'com.alibaba:arouter-api:1.5.1'
 
     // 资源冲突跟引入的先后顺序有关
     implementation project(':common')
+    // implementation(name:'common-release', ext:'aar')
     implementation project(':movie')
     if (IS_MODULE.toBoolean()) {
         implementation project(':navigation')

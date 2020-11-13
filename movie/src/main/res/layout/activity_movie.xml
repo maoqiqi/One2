@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.codearms.maoqiqi.one.ui.UpdateActivity">
+    tools:context="com.codearms.maoqiqi.one.ui.MovieActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,12 +12,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorNavigation"
+            android:background="@color/colorMovie"
             android:theme="@style/ToolBarDark"
             app:contentInsetStartWithNavigation="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_back"
-            app:title="@string/update_description" />
+            app:title="@string/app_name" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
