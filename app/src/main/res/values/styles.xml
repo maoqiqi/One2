@@ -1,4 +1,9 @@
 <resources>
+    <style name="AppTheme.Navigation">
+        <item name="colorPrimary">@color/colorNavigation</item>
+        <item name="colorPrimaryDark">@color/colorNavigation</item>
+    </style>
+
     <style name="Theme.Drawer" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
