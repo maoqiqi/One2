@@ -99,6 +99,8 @@ class MainActivity : BaseActivity() {
     private fun setNavigationView() {
         Log.e("info", getString(R.string.name))
         Log.e("info", TestConflict.A)
+        Log.e("info", CommonConflict.A)
+        CommonConflict.a()
         binding.navView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 // R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))

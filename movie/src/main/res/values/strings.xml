@@ -1,3 +1,4 @@
 <resources>
     <string name="name">测试movie</string>
+    <string name="app_name">Movie</string>
 </resources>

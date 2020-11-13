@@ -1,4 +1,4 @@
-package com.codearms.maoqiqi.one.movie
+package com.codearms.maoqiqi.one
 
 import org.junit.Test
 

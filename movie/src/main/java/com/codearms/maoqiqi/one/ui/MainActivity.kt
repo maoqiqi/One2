@@ -1,18 +1,19 @@
-package com.codearms.maoqiqi.one.movie
+package com.codearms.maoqiqi.one.ui
 
 import android.os.Bundle
 import android.util.Log
-import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseActivity
-import com.codearms.maoqiqi.one.movie.databinding.ActivityMovieBinding
+import com.codearms.maoqiqi.one.movie.R
+import com.codearms.maoqiqi.one.movie.databinding.ActivityMainBinding
 
-@Route(path = "/movie/main")
-class MovieActivity : BaseActivity() {
+class MainActivity : BaseActivity() {
 
-    private val binding: ActivityMovieBinding by binding(R.layout.activity_movie)
+    private val binding: ActivityMainBinding by binding(R.layout.activity_main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
         binding.lifecycleOwner = this
         setSupportActionBar(binding.toolbar)
 
@@ -21,7 +22,5 @@ class MovieActivity : BaseActivity() {
 
         Log.e("info", "==============")
         params?.let { Log.e("info", "null") } ?: Log.e("info", "params=$params")
-
-//        params.Tod
     }
 }
