@@ -42,10 +42,10 @@ class MainActivity : BaseActivity() {
         R.color.color_movie_selector
     )
     private val paths: Array<String> = arrayOf(
-        "/movie/fragment",
-        "/movie/fragment",
-        "/movie/fragment",
-        "/movie/fragment",
+        "/home/fragment",
+        "/news/fragment",
+        "/book/fragment",
+        "/music/fragment",
         "/movie/fragment"
     )
     private val fragments: Array<Fragment?> = arrayOfNulls(colors.size)

@@ -2,15 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.codearms.maoqiqi.one.ui.MusicActivity">
+    tools:context="com.codearms.maoqiqi.one.ui.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <fragment
-            android:id="@+id/fragment_music"
-            class="com.codearms.maoqiqi.one.ui.fragment.MusicFragment"
+            android:id="@+id/fragment_home"
+            class="com.codearms.maoqiqi.one.ui.fragment.HomeFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

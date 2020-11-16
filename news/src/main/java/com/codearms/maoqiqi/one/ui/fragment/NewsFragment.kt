@@ -1,13 +1,13 @@
-package com.codearms.maoqiqi.one.ui.news
+package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.codearms.maoqiqi.one.MainActivity
-import com.codearms.maoqiqi.one.R
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
-import com.codearms.maoqiqi.one.databinding.FragmentNewsBinding
+import com.codearms.maoqiqi.one.news.R
+import com.codearms.maoqiqi.one.news.databinding.FragmentNewsBinding
 
 /**
  * 新闻
@@ -15,6 +15,7 @@ import com.codearms.maoqiqi.one.databinding.FragmentNewsBinding
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
+@Route(path = "/news/fragment")
 class NewsFragment : BaseFragment() {
 
     private val binding: FragmentNewsBinding by binding()
@@ -26,7 +27,6 @@ class NewsFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.text.text = "NewsFragment"
-        (activity as MainActivity).setSupportActionBar(binding.toolbar)
 //        (activity as MainActivity).associateToolbar()
     }
 }

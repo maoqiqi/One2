@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.book.BookFragment">
+        tools:context="com.codearms.maoqiqi.one.ui.fragment.BookFragment">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -16,7 +16,7 @@
             android:theme="@style/ToolBarDark"
             app:contentInsetStartWithNavigation="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:title="@string/book"
+            app:title="@string/app_name"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView

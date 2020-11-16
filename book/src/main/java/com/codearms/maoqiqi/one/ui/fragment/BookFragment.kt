@@ -1,13 +1,13 @@
-package com.codearms.maoqiqi.one.ui.book
+package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.codearms.maoqiqi.one.MainActivity
-import com.codearms.maoqiqi.one.R
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
-import com.codearms.maoqiqi.one.databinding.FragmentBookBinding
+import com.codearms.maoqiqi.one.book.R
+import com.codearms.maoqiqi.one.book.databinding.FragmentBookBinding
 
 /**
  * 图书
@@ -15,6 +15,7 @@ import com.codearms.maoqiqi.one.databinding.FragmentBookBinding
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
+@Route(path = "/book/fragment")
 class BookFragment : BaseFragment() {
 
     private val binding: FragmentBookBinding by binding()
@@ -26,7 +27,6 @@ class BookFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.text.text = "BookFragment"
-        (activity as MainActivity).setSupportActionBar(binding.toolbar)
 //        (activity as MainActivity).associateToolbar()
     }
 }

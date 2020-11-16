@@ -1,13 +1,13 @@
-package com.codearms.maoqiqi.one.ui.music
+package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.codearms.maoqiqi.one.MainActivity
-import com.codearms.maoqiqi.one.R
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
-import com.codearms.maoqiqi.one.databinding.FragmentMusicBinding
+import com.codearms.maoqiqi.one.music.R
+import com.codearms.maoqiqi.one.music.databinding.FragmentMusicBinding
 
 /**
  * 音乐
@@ -15,6 +15,7 @@ import com.codearms.maoqiqi.one.databinding.FragmentMusicBinding
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
+@Route(path = "/music/fragment")
 class MusicFragment : BaseFragment() {
 
     private val binding: FragmentMusicBinding by binding()
@@ -26,7 +27,6 @@ class MusicFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.text.text = "MusicFragment"
-        (activity as MainActivity).setSupportActionBar(binding.toolbar)
 //        (activity as MainActivity).associateToolbar()
     }
 }

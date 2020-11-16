@@ -1,4 +1,4 @@
-package com.codearms.maoqiqi.one.ui.home
+package com.codearms.maoqiqi.one.ui.fragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
