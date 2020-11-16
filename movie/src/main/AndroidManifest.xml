@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Movie">
-        <activity android:name="com.codearms.maoqiqi.one.ui.MainActivity">
+        <activity android:name="com.codearms.maoqiqi.one.ui.MovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

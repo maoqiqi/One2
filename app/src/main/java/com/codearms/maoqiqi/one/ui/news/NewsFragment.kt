@@ -26,6 +26,7 @@ class NewsFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.text.text = "NewsFragment"
-        (activity as MainActivity).associateToolbar(binding.toolbar)
+        (activity as MainActivity).setSupportActionBar(binding.toolbar)
+//        (activity as MainActivity).associateToolbar()
     }
 }

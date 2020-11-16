@@ -11,7 +11,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.launcher.ARouter
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityMainBinding
@@ -41,10 +41,28 @@ class MainActivity : BaseActivity() {
         R.color.color_music_selector,
         R.color.color_movie_selector
     )
+    private val paths: Array<String> = arrayOf(
+        "/movie/fragment",
+        "/movie/fragment",
+        "/movie/fragment",
+        "/movie/fragment",
+        "/movie/fragment"
+    )
+    private val fragments: Array<Fragment?> = arrayOfNulls(colors.size)
     private val badgeViews: Array<View?> = arrayOfNulls(colors.size)
+    private var previousFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ARouter.openLog()
+        ARouter.openDebug()
+        ARouter.init(application)
+
+        Log.e("info", getString(R.string.name))
+        Log.e("info", TestConflict.A)
+        Log.e("info", CommonConflict.A)
+        CommonConflict.a()
+
         window.statusBarColor = Color.TRANSPARENT
         binding.lifecycleOwner = this
         // 蒙层颜色
@@ -52,6 +70,8 @@ class MainActivity : BaseActivity() {
         // 状态栏颜色
         binding.drawerLayout.setStatusBarBackground(statusColors[0])
         setupBottomNavigationMenuView()
+        // binding.bottomNavView.getChildAt(0).setSelected(true)
+        binding.bottomNavView.selectedItemId = R.id.nav_home
         setNavigationView()
     }
 
@@ -72,12 +92,15 @@ class MainActivity : BaseActivity() {
         else -> -1
     }
 
+    private fun getFragment(itemId: Int): Fragment? {
+        val position = getPosition(itemId)
+        if (fragments[position] == null)
+            fragments[position] = ARouter.getInstance().build(paths[position]).navigation() as Fragment
+        return fragments[position]
+    }
+
     @SuppressLint("RestrictedApi")
     private fun setupBottomNavigationMenuView() {
-        ARouter.openLog()
-        ARouter.openDebug()
-        ARouter.init(application)
-        val navController = findNavController(R.id.nav_host_fragment)
         val menuView: BottomNavigationMenuView = binding.bottomNavView.getChildAt(0) as BottomNavigationMenuView
         for (i in 0 until menuView.childCount) {
             badgeViews[i] = LayoutInflater.from(this).inflate(R.layout.layout_badge, null)
@@ -91,31 +114,39 @@ class MainActivity : BaseActivity() {
             binding.drawerLayout.setStatusBarBackground(statusColors[getPosition(item.itemId)])
             badgeViews[getPosition(item.itemId)]?.visibility = View.GONE
             item.isChecked = true
-            navController.navigate(item.itemId)
-            false
+            switchFragment(previousFragment, getFragment(item.itemId))
+            true
+        }
+    }
+
+    private fun switchFragment(from: Fragment?, to: Fragment?) {
+        if (to != null && from !== to) { // from != to 才切换
+            previousFragment = to
+            val ft = supportFragmentManager.beginTransaction()
+
+            // from隐藏
+            if (from != null) ft.hide(from)
+            if (!to.isAdded) {
+                // 没有被添加,添加to
+                ft.add(R.id.container, to).commit()
+            } else {
+                // 已经被添加,显示to
+                ft.show(to).commit()
+            }
         }
     }
 
     private fun setNavigationView() {
-        Log.e("info", getString(R.string.name))
-        Log.e("info", TestConflict.A)
-        Log.e("info", CommonConflict.A)
-        CommonConflict.a()
         binding.navView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                // R.id.nav_project -> startActivity(Intent(this, ProjectActivity::class.java))
                 R.id.nav_project -> ARouter.getInstance().build("/navigation/project").navigation()
                 R.id.nav_update -> {
                     binding.navView.menu.findItem(R.id.nav_update).actionView.visibility = View.GONE
-                    // startActivity(Intent(this, UpdateActivity::class.java))
                     ARouter.getInstance().build("/navigation/update").navigation()
                 }
-                // R.id.nav_scan_code -> startActivity(Intent(this, ScanCodeActivity::class.java))
                 R.id.nav_scan_code -> ARouter.getInstance().build("/navigation/scan_code").navigation()
-                // R.id.nav_problem -> startActivity(Intent(this, ProblemActivity::class.java))
-                R.id.nav_problem -> ARouter.getInstance().build("/navigation/about").navigation()
-                // R.id.nav_about -> startActivity(Intent(this, AboutActivity::class.java))
-                R.id.nav_about -> ARouter.getInstance().build("/movie/movie").navigation()
+                R.id.nav_problem -> ARouter.getInstance().build("/navigation/problem").navigation()
+                R.id.nav_about -> ARouter.getInstance().build("/navigation/about").navigation()
             }
             true
         }

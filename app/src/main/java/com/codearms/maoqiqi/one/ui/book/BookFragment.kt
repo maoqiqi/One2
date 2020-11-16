@@ -26,6 +26,7 @@ class BookFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.text.text = "BookFragment"
-        (activity as MainActivity).associateToolbar(binding.toolbar)
+        (activity as MainActivity).setSupportActionBar(binding.toolbar)
+//        (activity as MainActivity).associateToolbar()
     }
 }

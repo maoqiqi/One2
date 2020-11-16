@@ -14,6 +14,6 @@ class MovieActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.lifecycleOwner = this
-        setSupportActionBar(binding.toolbar)
+        // setSupportActionBar(binding.toolbar)
     }
 }
