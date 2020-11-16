@@ -78,8 +78,12 @@ dependencies {
     // 资源冲突跟引入的先后顺序有关
     implementation project(':common')
     // implementation(name:'common-release', ext:'aar')
-    implementation project(':movie')
     if (IS_MODULE.toBoolean()) {
+        implementation project(':home')
+        implementation project(':news')
+        implementation project(':book')
+        implementation project(':music')
+        implementation project(':movie')
         implementation project(':navigation')
     }
 

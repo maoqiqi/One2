@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codearms.maoqiqi.one.home">
+
+    <application>
+        <activity
+            android:name="com.codearms.maoqiqi.one.ui.HomeActivity"
+            android:theme="@style/AppTheme.Home" />
+    </application>
+
+</manifest>

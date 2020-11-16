@@ -1,0 +1,6 @@
+<resources>
+    <style name="AppTheme.Music">
+        <item name="colorPrimary">@color/colorMusic</item>
+        <item name="colorPrimaryDark">@color/colorMusic</item>
+    </style>
+</resources>

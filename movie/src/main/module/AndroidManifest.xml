@@ -4,9 +4,6 @@
 
     <application>
         <activity
-            android:name="com.codearms.maoqiqi.one.ui.MainActivity"
-            android:theme="@style/AppTheme.Movie" />
-        <activity
             android:name="com.codearms.maoqiqi.one.ui.MovieActivity"
             android:theme="@style/AppTheme.Movie" />
     </application>

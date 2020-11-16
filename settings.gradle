@@ -1,5 +1,9 @@
 include ':app'
 include ':common'
+include ':home'
+include ':news'
+include ':book'
+include ':music'
 include ':movie'
 include ':navigation'
 rootProject.name = "One"

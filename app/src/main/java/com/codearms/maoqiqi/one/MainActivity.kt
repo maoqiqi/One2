@@ -95,7 +95,7 @@ class MainActivity : BaseActivity() {
     private fun getFragment(itemId: Int): Fragment? {
         val position = getPosition(itemId)
         if (fragments[position] == null)
-            fragments[position] = ARouter.getInstance().build(paths[position]).navigation() as Fragment
+            fragments[position] = ARouter.getInstance().build(paths[position]).navigation() as? Fragment
         return fragments[position]
     }
 

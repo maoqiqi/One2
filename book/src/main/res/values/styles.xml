@@ -1,0 +1,6 @@
+<resources>
+    <style name="AppTheme.Book">
+        <item name="colorPrimary">@color/colorBook</item>
+        <item name="colorPrimaryDark">@color/colorBook</item>
+    </style>
+</resources>

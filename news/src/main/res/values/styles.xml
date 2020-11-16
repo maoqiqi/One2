@@ -1,0 +1,6 @@
+<resources>
+    <style name="AppTheme.News">
+        <item name="colorPrimary">@color/colorNews</item>
+        <item name="colorPrimaryDark">@color/colorNews</item>
+    </style>
+</resources>
