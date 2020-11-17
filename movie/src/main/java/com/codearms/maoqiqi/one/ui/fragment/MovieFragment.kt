@@ -33,8 +33,6 @@ class MovieFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // (activity as MainActivity).associateToolbar(binding.toolbar)
-        // (activity as BaseActivity).setSupportActionBar(binding.toolbar)
         try {
             activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
         } catch (e: Exception) {

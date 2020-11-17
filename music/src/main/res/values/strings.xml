@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Music</string>
+
+    <string-array name="music_array">
+        <item>歌曲</item>
+        <item>艺术家</item>
+        <item>专辑</item>
+        <item>文件夹</item>
+    </string-array>
 </resources>
