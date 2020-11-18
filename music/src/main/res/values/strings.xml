@@ -7,4 +7,13 @@
         <item>专辑</item>
         <item>文件夹</item>
     </string-array>
+
+    <string name="sort_by">排序</string>
+    <string name="sort_order_az">A-Z</string>
+    <string name="sort_order_za">Z-A</string>
+    <string name="sort_order_artist">艺术家</string>
+    <string name="sort_order_album">专辑</string>
+    <string name="sort_order_duration">时长</string>
+    <string name="sort_order_number_of_songs">歌曲数</string>
+    <string name="sort_order_number_of_albums">专辑数</string>
 </resources>

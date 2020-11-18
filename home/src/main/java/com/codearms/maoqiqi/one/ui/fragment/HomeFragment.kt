@@ -1,13 +1,12 @@
 package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.home.R
 import com.codearms.maoqiqi.one.home.databinding.FragmentHomeBinding
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 
 /**
  * 首页
@@ -27,6 +26,19 @@ class HomeFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.text.text = "HomeFragment"
+        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
+        setHasOptionsMenu(true)
+
+        binding.banner.addBannerLifecycleObserver(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_home, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 }

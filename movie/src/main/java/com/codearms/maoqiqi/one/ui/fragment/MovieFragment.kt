@@ -2,16 +2,15 @@ package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.movie.R
 import com.codearms.maoqiqi.one.movie.databinding.FragmentMovieBinding
 import com.flyco.tablayout.listener.OnTabSelectListener
-import java.lang.Exception
 
 /**
  * 电影
@@ -24,7 +23,6 @@ class MovieFragment : BaseFragment() {
 
     private val binding: FragmentMovieBinding by binding()
     private val titles = arrayOf("正在热映", "即将上映")
-
     private val adapter: SectionsPagerAdapter by lazy { SectionsPagerAdapter(this) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -33,11 +31,8 @@ class MovieFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        try {
-            activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
 
         binding.viewPager.adapter = adapter
@@ -69,12 +64,8 @@ class MovieFragment : BaseFragment() {
 
     inner class SectionsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-        override fun getItemCount(): Int {
-            return titles.size
-        }
+        override fun getItemCount(): Int = titles.size
 
-        override fun createFragment(position: Int): Fragment {
-            return MovieListFragment.newInstance(position)
-        }
+        override fun createFragment(position: Int): Fragment = MovieListFragment.newInstance(position)
     }
 }

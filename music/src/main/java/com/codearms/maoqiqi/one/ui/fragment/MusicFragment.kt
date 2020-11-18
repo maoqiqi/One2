@@ -1,17 +1,18 @@
 package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.music.R
 import com.codearms.maoqiqi.one.music.databinding.FragmentMusicBinding
 import com.google.android.material.tabs.TabLayout
+import java.lang.Exception
 
 /**
  * 音乐
@@ -32,11 +33,14 @@ class MusicFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
+        setHasOptionsMenu(true)
+
         binding.viewPager.adapter = adapter
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                // binding.tabLayout. = position
-                // binding.tabLayout.selectedTabPosition = position
+                binding.tabLayout.getTabAt(position)?.select()
             }
         })
 
@@ -52,14 +56,19 @@ class MusicFragment : BaseFragment() {
         })
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_search, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+
     inner class SectionsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-        override fun getItemCount(): Int {
-            return titles.size
-        }
+        override fun getItemCount(): Int = titles.size
 
-        override fun createFragment(position: Int): Fragment {
-            return MusicListFragment.newInstance(position)
-        }
+        override fun createFragment(position: Int): Fragment = MusicListFragment.newInstance(position)
     }
 }

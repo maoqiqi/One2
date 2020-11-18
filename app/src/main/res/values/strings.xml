@@ -30,27 +30,6 @@
     <string name="search_history">搜索历史</string>
     <string name="search_clean">清除</string>
 
-    <string-array name="music_array">
-        <item>Songs</item>
-        <item>Artists</item>
-        <item>Albums</item>
-        <item>Folders</item>
-    </string-array>
-
-    <string name="music_song_info">%1$s · %2$s</string>
-    <string name="music_artist_info">%1$d 张专辑 | %2$d 首歌</string>
-    <string name="music_album_info">%1$s | %2$d 首歌</string>
-    <string name="music_folder_info">%1$d首 %2$s</string>
-
-    <string name="sort_by">Sort by</string>
-    <string name="sort_order_az">A-Z</string>
-    <string name="sort_order_za">Z-A</string>
-    <string name="sort_order_artist">Artist</string>
-    <string name="sort_order_album">Album</string>
-    <string name="sort_order_duration">Duration</string>
-    <string name="sort_order_number_of_songs">Number of songs</string>
-    <string name="sort_order_number_of_albums">Number of albums</string>
-
     <string name="read_external_storage">One will need to read external storage to display songs on your device.</string>
     <string name="to_application_details_settings">To application details settings,authorization to read external storage to display songs on your device.</string>
     <string name="ok">OK</string>

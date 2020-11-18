@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.launcher.ARouter
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityMainBinding
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
@@ -24,7 +25,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenuView
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), OnToolbarListener {
 
     private val binding: ActivityMainBinding by binding(R.layout.activity_main)
     private val statusColors: IntArray = intArrayOf(
@@ -75,10 +76,9 @@ class MainActivity : BaseActivity() {
         setNavigationView()
     }
 
-    fun associateToolbar(toolbar: Toolbar) {
+    override fun onToolbar(toolbar: Toolbar?) {
         setSupportActionBar(toolbar)
-        val toggle =
-            ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close)
+        val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close)
         toggle.syncState()
         binding.drawerLayout.addDrawerListener(toggle)
     }
