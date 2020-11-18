@@ -2,13 +2,15 @@ package com.codearms.maoqiqi.one.ui
 
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.widget.Toolbar
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseActivity
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.movie.R
 import com.codearms.maoqiqi.one.movie.databinding.ActivityMovieBinding
 
 @Route(path = "/movie/movie")
-class MovieActivity : BaseActivity() {
+class MovieActivity : BaseActivity(), OnToolbarListener {
 
     private val binding: ActivityMovieBinding by binding(R.layout.activity_movie)
 
@@ -22,5 +24,9 @@ class MovieActivity : BaseActivity() {
 
         Log.e("info", "==============")
         params?.let { Log.e("info", "null") } ?: Log.e("info", "params=$params")
+    }
+
+    override fun onToolbar(toolbar: Toolbar?) {
+        setSupportActionBar(toolbar)
     }
 }

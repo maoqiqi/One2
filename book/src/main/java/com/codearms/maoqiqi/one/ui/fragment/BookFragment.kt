@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.book.R
 import com.codearms.maoqiqi.one.book.databinding.FragmentBookBinding
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.flyco.tablayout.listener.OnTabSelectListener
 import java.lang.Exception
 
@@ -32,11 +33,8 @@ class BookFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        try {
-            activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
 
         binding.viewPager.adapter = adapter

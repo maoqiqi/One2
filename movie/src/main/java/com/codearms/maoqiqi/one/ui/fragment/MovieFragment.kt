@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
+import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.movie.R
 import com.codearms.maoqiqi.one.movie.databinding.FragmentMovieBinding
 import com.flyco.tablayout.listener.OnTabSelectListener
@@ -32,11 +33,8 @@ class MovieFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        try {
-            activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
 
         binding.viewPager.adapter = adapter
