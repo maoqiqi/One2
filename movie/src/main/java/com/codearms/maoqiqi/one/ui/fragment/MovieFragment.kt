@@ -33,8 +33,6 @@ class MovieFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // (activity as MainActivity).associateToolbar(binding.toolbar)
-        // (activity as BaseActivity).setSupportActionBar(binding.toolbar)
         try {
             activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
         } catch (e: Exception) {
@@ -71,12 +69,8 @@ class MovieFragment : BaseFragment() {
 
     inner class SectionsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-        override fun getItemCount(): Int {
-            return titles.size
-        }
+        override fun getItemCount(): Int = titles.size
 
-        override fun createFragment(position: Int): Fragment {
-            return MovieListFragment.newInstance(position)
-        }
+        override fun createFragment(position: Int): Fragment = MovieListFragment.newInstance(position)
     }
 }
