@@ -24,7 +24,6 @@ class MovieFragment : BaseFragment() {
 
     private val binding: FragmentMovieBinding by binding()
     private val titles = arrayOf("正在热映", "即将上映")
-
     private val adapter: SectionsPagerAdapter by lazy { SectionsPagerAdapter(this) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
