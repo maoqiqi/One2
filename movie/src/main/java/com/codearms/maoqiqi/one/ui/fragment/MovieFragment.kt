@@ -2,7 +2,6 @@ package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
@@ -12,7 +11,6 @@ import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.movie.R
 import com.codearms.maoqiqi.one.movie.databinding.FragmentMovieBinding
 import com.flyco.tablayout.listener.OnTabSelectListener
-import java.lang.Exception
 
 /**
  * 电影
