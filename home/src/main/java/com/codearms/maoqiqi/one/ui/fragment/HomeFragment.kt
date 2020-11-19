@@ -2,6 +2,7 @@ package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.*
+import androidx.fragment.app.viewModels
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.home.R
@@ -18,9 +19,10 @@ import com.codearms.maoqiqi.one.listener.OnToolbarListener
 class HomeFragment : BaseFragment() {
 
     private val binding: FragmentHomeBinding by binding()
-//    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 

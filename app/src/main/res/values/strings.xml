@@ -14,49 +14,4 @@
     <string name="transition_book_img">transition_book_img</string>
     <string name="transition_music_img">transition_music_img</string>
     <string name="transition_movie_img">transition_movie_img</string>
-
-    <string-array name="gank_classify">
-        <item>All</item>
-        <item>Android</item>
-        <item>iOS</item>
-        <item>Front</item>
-        <item>Rest Movie</item>
-        <item>Resource</item>
-        <item>Recommend</item>
-        <item>Welfare</item>
-    </string-array>
-
-    <string name="collection">收藏</string>
-    <string name="search_history">搜索历史</string>
-    <string name="search_clean">清除</string>
-
-    <string name="read_external_storage">One will need to read external storage to display songs on your device.</string>
-    <string name="to_application_details_settings">To application details settings,authorization to read external storage to display songs on your device.</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
-    <string name="no_authorization_to_read_external_storage">One no authorization to read external storage to display songs on your device.</string>
-
-    <string name="song_info">Song ：%s</string>
-    <string name="artist_info">Artist ：%s</string>
-    <string name="album_info">Album ：%s</string>
-    <string name="folder_info">Folder ：%s</string>
-    <string name="play_next">Play next</string>
-    <string name="collect_song_list">Collect song list</string>
-    <string name="share">Share</string>
-    <string name="set_ring">Set ring</string>
-    <string name="song_information">Song information</string>
-    <string name="delete">Delete</string>
-
-    <string name="movie_director">Director：%s</string>
-    <string name="movie_star">Star：%s</string>
-    <string name="movie_classify">类型：%s</string>
-
-    <string name="setting">设置</string>
-
-    <string name="shortcuts_search_short">搜索</string>
-    <string name="shortcuts_search_long">搜索</string>
-    <string name="shortcuts_search_disabled">搜索（不可用）</string>
-    <string name="shortcuts_collection_short">收藏</string>
-    <string name="shortcuts_collection_long">我的收藏</string>
-    <string name="shortcuts_collection_disabled">收藏（不可用）</string>
 </resources>
