@@ -3,6 +3,7 @@ package com.codearms.maoqiqi.one
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -66,6 +67,17 @@ class MainActivity : BaseActivity(), OnToolbarListener {
         Log.e("info", TestConflict.A)
         Log.e("info", CommonConflict.A)
         CommonConflict.a()
+
+        val action: String? = intent?.action
+        val data: Uri? = intent?.data
+        Log.i("info", "action=$action,data=$data")
+
+        // Figure out what to do based on the intent type
+        if (intent?.type?.startsWith("image/") == true) {
+            // Handle intents with image data ...
+        } else if (intent?.type == "text/plain") {
+            // Handle intents with text ...
+        }
 
         savedInstanceState?.let { restoreInstanceState(it) }
         window.statusBarColor = Color.TRANSPARENT
