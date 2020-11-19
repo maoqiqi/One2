@@ -1,10 +1,10 @@
 package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.music.R
+import com.codearms.maoqiqi.one.music.databinding.FragmentMusicListBinding
 import com.codearms.maoqiqi.one.ui.MusicUtils
 
 /**
@@ -15,6 +15,7 @@ import com.codearms.maoqiqi.one.ui.MusicUtils
  */
 class MusicListFragment : BaseFragment() {
 
+    private val binding: FragmentMusicListBinding by binding()
     private var position: Int = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,8 +25,10 @@ class MusicListFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         position = arguments?.getInt("position") ?: 0
-        Log.e("info", "position=$position")
         setHasOptionsMenu(true)
+
+        binding.lifecycleOwner = this
+        binding.tv.text = "MusicListFragment:$position"
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
