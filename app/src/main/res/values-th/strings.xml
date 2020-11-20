@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_description">泰语</string>
+    <string name="language_auto">อัตโนมัติ</string>
+    <string name="language_setting">การตั้งค่าภาษา</string>
+</resources>

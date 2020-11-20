@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_description">意大利语</string>
+    <string name="language_auto">Automatico</string>
+    <string name="language_setting">Impostazioni della lingua</string>
+</resources>

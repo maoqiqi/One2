@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_description">中文繁体</string>
+    <string name="language_auto">自動</string>
+    <string name="language_setting">語言設置</string>
+</resources>

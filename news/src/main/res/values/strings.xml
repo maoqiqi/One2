@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="preference">偏好设置</string>
 </resources>

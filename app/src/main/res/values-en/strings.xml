@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_description">英语</string>
+    <string name="language_auto">Automatic</string>
+    <string name="language_setting">Language Settings</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_description">越南语</string>
+    <string name="language_auto">Tự động</string>
+    <string name="language_setting">Thiết lập Ngôn ngữ</string>
+</resources>

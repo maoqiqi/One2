@@ -11,7 +11,50 @@
     <string name="music">音乐</string>
     <string name="movie">影视</string>
 
-    <string name="transition_book_img">transition_book_img</string>
-    <string name="transition_music_img">transition_music_img</string>
-    <string name="transition_movie_img">transition_movie_img</string>
+    <string name="project">项目介绍</string>
+    <string name="update">更新说明</string>
+    <string name="scan_code">扫码下载</string>
+    <string name="problem">问题反馈</string>
+    <string name="about">关于</string>
+
+    <string name="language_description">中文简体</string>
+    <string name="language_setting">语言设置</string>
+    <string name="language_auto">自动</string>
+
+    <string-array name="languages">
+        <!--自动-->
+        <item>@string/language_auto</item>
+        <!--阿拉伯语:values-ar-->
+        <item>العربية</item>
+        <!--德语:values-de-->
+        <item>Deutsch</item>
+        <!--英语:values-en-->
+        <item>English</item>
+        <!--西班牙语:values-es-->
+        <item>Español</item>
+        <!--法语:values-fr-->
+        <item>Le français</item>
+        <!--印地语:values-hi-->
+        <item>हिन्दी</item>
+        <!--印度尼西亚语:values-in-->
+        <item>Bahasa indonesia</item>
+        <!--意大利语:values-it-->
+        <item>lingua italiana</item>
+        <!--日语:values-ja-rJP-->
+        <item>日本語</item>
+        <!--韩语:values-ko-rKR-->
+        <item>한국어</item>
+        <!--葡萄牙语:values-pt-->
+        <item>Português</item>
+        <!--俄语:values-ru-->
+        <item>русский</item>
+        <!--泰语:values-th-->
+        <item>ไทย</item>
+        <!--菲律宾语:values-tl-rPH-->
+        <item>Filipino</item>
+        <!--越南语:values-vi-rVN-->
+        <item>Người việt nam</item>
+        <!--中文繁体：values-zh-rTW-->
+        <item>中文繁体</item>
+    </string-array>
 </resources>
