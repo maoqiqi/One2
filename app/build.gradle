@@ -75,7 +75,6 @@ dependencies {
     // ARouter
     implementation 'com.alibaba:arouter-api:1.5.1'
 
-    // 资源冲突跟引入的先后顺序有关
     implementation project(':common')
     // implementation(name:'common-release', ext:'aar')
     if (IS_MODULE.toBoolean()) {
