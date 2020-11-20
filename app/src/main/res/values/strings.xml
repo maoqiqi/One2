@@ -17,7 +17,8 @@
     <string name="problem">问题反馈</string>
     <string name="about">关于</string>
 
-    <string name="language_description">中文(中国大陆)</string>
+    <string name="language_description">中文简体</string>
+    <string name="language_setting">语言设置</string>
     <string name="language_auto">自动</string>
 
     <string-array name="languages">
@@ -53,7 +54,7 @@
         <item>Filipino</item>
         <!--越南语:values-vi-rVN-->
         <item>Người việt nam</item>
-        <!--中文(台湾)：values-zh-rTW-->
-        <item>繁体中文</item>
+        <!--中文繁体：values-zh-rTW-->
+        <item>中文繁体</item>
     </string-array>
 </resources>

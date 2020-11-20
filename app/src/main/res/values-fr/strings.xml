@@ -2,4 +2,5 @@
 <resources>
     <string name="language_description">法语</string>
     <string name="language_auto">Automatique</string>
+    <string name="language_setting">Paramètres de la langue</string>
 </resources>

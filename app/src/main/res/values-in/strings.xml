@@ -2,4 +2,5 @@
 <resources>
     <string name="language_description">印度尼西亚语</string>
     <string name="language_auto">Otomatis</string>
+    <string name="language_setting">Setelan Bahasa</string>
 </resources>

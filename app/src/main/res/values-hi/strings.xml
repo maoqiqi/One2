@@ -2,4 +2,5 @@
 <resources>
     <string name="language_description">印地语</string>
     <string name="language_auto">स्वचालित</string>
+    <string name="language_setting">भाषा सेटिंग्स</string>
 </resources>

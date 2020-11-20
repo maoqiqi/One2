@@ -2,4 +2,5 @@
 <resources>
     <string name="language_description">葡萄牙语</string>
     <string name="language_auto">Automático</string>
+    <string name="language_setting">Configurações de Idioma</string>
 </resources>

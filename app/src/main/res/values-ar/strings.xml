@@ -2,4 +2,5 @@
 <resources>
     <string name="language_description">阿拉伯语</string>
     <string name="language_auto">أوتوماتيكي</string>
+    <string name="language_setting">إعدادات اللغة</string>
 </resources>

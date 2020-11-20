@@ -2,4 +2,5 @@
 <resources>
     <string name="language_description">韩语</string>
     <string name="language_auto">자동</string>
+    <string name="language_setting">언어 설정</string>
 </resources>
