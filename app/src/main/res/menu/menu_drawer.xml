@@ -6,27 +6,27 @@
         <item
             android:id="@+id/nav_project"
             android:icon="@drawable/ic_nav_project"
-            android:title="项目介绍" />
+            android:title="@string/project" />
 
         <item
             android:id="@+id/nav_update"
             android:icon="@drawable/ic_nav_update"
-            android:title="更新说明"
+            android:title="@string/update"
             app:actionLayout="@layout/layout_badge_nav" />
 
         <item
             android:id="@+id/nav_scan_code"
             android:icon="@drawable/ic_nav_scan_code"
-            android:title="扫码下载" />
+            android:title="@string/scan_code" />
 
         <item
             android:id="@+id/nav_problem"
             android:icon="@drawable/ic_nav_problem"
-            android:title="问题反馈" />
+            android:title="@string/problem" />
 
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_nav_about"
-            android:title="关于" />
+            android:title="@string/about" />
     </group>
 </menu>

@@ -11,7 +11,9 @@
     <string name="music">音乐</string>
     <string name="movie">影视</string>
 
-    <string name="transition_book_img">transition_book_img</string>
-    <string name="transition_music_img">transition_music_img</string>
-    <string name="transition_movie_img">transition_movie_img</string>
+    <string name="project">项目介绍</string>
+    <string name="update">更新说明</string>
+    <string name="scan_code">扫码下载</string>
+    <string name="problem">问题反馈</string>
+    <string name="about">关于</string>
 </resources>

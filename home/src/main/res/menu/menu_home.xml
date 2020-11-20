@@ -6,7 +6,6 @@
         android:id="@+id/menu_classify"
         android:icon="@drawable/ic_menu_classify"
         android:orderInCategory="2"
-        android:title="分类"
+        android:title="@string/classify"
         app:showAsAction="always" />
-    
 </menu>
