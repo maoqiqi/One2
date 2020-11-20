@@ -5,7 +5,18 @@
     <application>
         <activity
             android:name="com.codearms.maoqiqi.one.ui.HomeActivity"
-            android:theme="@style/AppTheme.Home" />
+            android:theme="@style/AppTheme.Home">
+            <intent-filter android:label="example">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="home"
+                    android:scheme="one" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

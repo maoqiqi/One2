@@ -5,7 +5,18 @@
     <application>
         <activity
             android:name="com.codearms.maoqiqi.one.ui.MovieActivity"
-            android:theme="@style/AppTheme.Movie" />
+            android:theme="@style/AppTheme.Movie">
+            <intent-filter android:label="example">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="movie"
+                    android:scheme="one" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
