@@ -3,7 +3,7 @@ package com.codearms.maoqiqi.language
 import android.content.ComponentCallbacks
 import android.content.res.Configuration
 
-class LanguageComponentCallbacks(
+internal class LanguageComponentCallbacks(
     private val callBack: (Configuration) -> Unit
 ) : ComponentCallbacks {
 

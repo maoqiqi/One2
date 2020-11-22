@@ -28,6 +28,7 @@ object LifecycleCallbacks : Application.ActivityLifecycleCallbacks {
     }
 
     override fun onActivityResumed(activity: Activity) {
+        Log.e(activity.javaClass.name, "onActivityResumed(activity: Activity)")
         currentActivityRef = WeakReference(activity)
     }
 

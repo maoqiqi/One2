@@ -113,6 +113,7 @@ abstract class LogFragment : Fragment() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         Log.e(getTagName(), "-->onConfigurationChanged(newConfig: Configuration)")
+        Log.e(getTagName(), "-->configuration:$newConfig")
     }
 
     override fun onHiddenChanged(hidden: Boolean) {

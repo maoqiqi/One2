@@ -1,8 +1,8 @@
 package com.codearms.maoqiqi.language.store
 
+import android.app.Application
 import com.tencent.mmkv.MMKV
 import java.util.*
-
 
 /**
  * 使用MMKV高性能组件保存数据
@@ -10,17 +10,31 @@ import java.util.*
  * date: 2020-11-20 21:01
  * version v1.0.0
  */
-class MMKVLocaleStore : LocaleStore {
+class MMKVLocaleStore(
+    private val application: Application,
+    private val defaultLocale: Locale = Locale.getDefault()
+) : LocaleStore {
 
-    var mmkv = MMKV.mmkvWithID("com.codearms.maoqiqi.language")
-
-
-    override fun getLocale(): Locale {
-        TODO("Not yet implemented")
+    private val mmkv by lazy {
+        MMKV.initialize(application)
+        MMKV.defaultMMKV()
     }
 
+    override fun getLocale(): Locale =
+        if (mmkv.decodeString(Locale_LANGUAGE_KEY) != null)
+            Locale(
+                mmkv.decodeString(Locale_LANGUAGE_KEY, ""),
+                mmkv.decodeString(Locale_COUNTRY_KEY, ""),
+                mmkv.decodeString(Locale_VARIANT_KEY, "")
+            )
+        else defaultLocale
+
     override fun setLocale(locale: Locale) {
-        TODO("Not yet implemented")
+        mmkv.apply {
+            encode(Locale_LANGUAGE_KEY, locale.language)
+            encode(Locale_COUNTRY_KEY, locale.country)
+            encode(Locale_VARIANT_KEY, locale.variant)
+        }
     }
 
     override fun isFollowingSystemLocale(): Boolean = mmkv.decodeBool(FOLLOW_SYSTEM_LOCALE_KEY, false)
@@ -30,7 +44,9 @@ class MMKVLocaleStore : LocaleStore {
     }
 
     companion object {
-        private const val LANGUAGE_KEY = "language_key"
+        private const val Locale_LANGUAGE_KEY = "language"
+        private const val Locale_COUNTRY_KEY = "country"
+        private const val Locale_VARIANT_KEY = "variant"
         private const val FOLLOW_SYSTEM_LOCALE_KEY = "follow_system_locale_key"
     }
 }

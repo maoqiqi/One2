@@ -4,7 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 
-class LanguageLifecycleCallbacks(
+internal class LanguageLifecycleCallbacks(
     private val callBack: (Activity) -> Unit
 ) : Application.ActivityLifecycleCallbacks {
 

@@ -78,6 +78,7 @@ dependencies {
     implementation 'com.alibaba:arouter-api:1.5.1'
 
     implementation project(':common')
+    implementation project(':language')
     // implementation(name:'common-release', ext:'aar')
     if (IS_MODULE.toBoolean()) {
         implementation project(':home')
