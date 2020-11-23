@@ -28,12 +28,12 @@ object LifecycleCallbacks : Application.ActivityLifecycleCallbacks {
     }
 
     override fun onActivityResumed(activity: Activity) {
-        Log.e(activity.javaClass.name, "onActivityResumed(activity: Activity)")
+        Log.e(activity.javaClass.simpleName, "onActivityResumed(activity: Activity)")
         currentActivityRef = WeakReference(activity)
     }
 
     override fun onActivityPaused(activity: Activity) {
-        Log.e(activity.javaClass.simpleName, "onActivityResumed(activity: Activity)")
+        Log.e(activity.javaClass.simpleName, "onActivityPaused(activity: Activity)")
     }
 
     override fun onActivityStopped(activity: Activity) {

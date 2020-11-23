@@ -6,11 +6,11 @@ import android.util.Log
 
 object ComponentCallbacks : ComponentCallbacks {
 
-    const val TAG = "ComponentCallbacks"
+    private const val TAG = "ComponentCallbacks"
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         Log.e(TAG, "onConfigurationChanged(newConfig: Configuration)")
-        Log.e(TAG, "onfiguration:$newConfig")
+        Log.e(TAG, "configuration:$newConfig")
     }
 
     override fun onLowMemory() {

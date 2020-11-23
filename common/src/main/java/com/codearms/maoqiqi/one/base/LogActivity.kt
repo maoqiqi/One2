@@ -1,5 +1,6 @@
 package com.codearms.maoqiqi.one.base
 
+import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,7 @@ import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.codearms.maoqiqi.one.app.LogLifecycleObserver
+import com.codearms.maoqiqi.one.getLocaleCompat
 
 /**
  * Log activity
@@ -18,12 +20,18 @@ abstract class LogActivity : AppCompatActivity() {
 
     open fun getTagName(): String = javaClass.simpleName
 
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
+        Log.e(getTagName(), "-->attachBaseContext(newBase: Context?)")
+    }
+
     // The activity is being created.
     // 您应该在此方法中执行所有正常的静态设置—创建视图、将数据绑定到列表等等.始终后接onStart().
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.e(getTagName(), "-->onCreate(savedInstanceState: Bundle?)")
         Log.e(getTagName(), "-->configuration:${resources.configuration}")
+        Log.e(getTagName(), "-->configuration:${resources.configuration.getLocaleCompat()}")
         lifecycle.addObserver(LogLifecycleObserver(getTagName()))
     }
 
