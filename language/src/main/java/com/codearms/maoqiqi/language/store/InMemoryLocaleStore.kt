@@ -11,7 +11,7 @@ import java.util.*
 class InMemoryLocaleStore : LocaleStore {
 
     private var locale: Locale = Locale.getDefault()
-    private var isFollowingSystemLocale = false
+    private var isFollowingSystemLocale = true
 
     override fun getLocale(): Locale = locale
 

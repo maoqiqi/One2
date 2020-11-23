@@ -55,7 +55,7 @@ class LanguageManager private constructor(
     private fun initialize(application: Application) {
         application.registerActivityLifecycleCallbacks(LanguageLifecycleCallbacks { activity ->
             delegate.applyLocale(activity, store.getLocale())
-            activity.resetTitle()
+            // activity.resetTitle()
         })
         application.registerComponentCallbacks(LanguageComponentCallbacks { config ->
             systemLocale = config.getLocaleCompat()

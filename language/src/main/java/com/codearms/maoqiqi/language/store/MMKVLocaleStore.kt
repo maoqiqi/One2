@@ -37,7 +37,7 @@ class MMKVLocaleStore(
         }
     }
 
-    override fun isFollowingSystemLocale(): Boolean = mmkv.decodeBool(FOLLOW_SYSTEM_LOCALE_KEY, false)
+    override fun isFollowingSystemLocale(): Boolean = mmkv.decodeBool(FOLLOW_SYSTEM_LOCALE_KEY, true)
 
     override fun setFollowSystemLocale(value: Boolean) {
         mmkv.encode(FOLLOW_SYSTEM_LOCALE_KEY, value)

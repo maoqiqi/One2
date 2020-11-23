@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
 import android.os.LocaleList
+import android.util.Log
 import androidx.annotation.RequiresApi
 import java.util.*
 
@@ -11,8 +12,10 @@ internal class UpdateLocaleDelegate {
 
     internal fun applyLocale(context: Context, locale: Locale) {
         updateResources(context, locale)
+        Log.e("info", "context=$context")
         val appContext = context.applicationContext
-        if (appContext !== context) {
+        if (appContext != null && appContext !== context) {
+            Log.e("info", "appContext=$appContext")
             updateResources(appContext, locale)
         }
     }
