@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.launcher.ARouter
+import com.codearms.maoqiqi.databinding.binding
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityMainBinding
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
@@ -49,7 +50,7 @@ class MainActivity : BaseActivity(), OnToolbarListener {
         "/news/fragment",
         "/book/fragment",
         "/music/fragment",
-        "/movie/fragment"
+        "/movie/fragment",
     )
     private val fragments: Array<Fragment?> = arrayOfNulls(colors.size)
     private val badgeViews: Array<View?> = arrayOfNulls(colors.size)
@@ -64,7 +65,7 @@ class MainActivity : BaseActivity(), OnToolbarListener {
         ARouter.init(application)
 
         Log.e("info", getString(R.string.name))
-        Log.e("info", TestConflict.A)
+//        Log.e("info", TestConflict.A)
         Log.e("info", CommonConflict.A)
         CommonConflict.a()
 
@@ -80,8 +81,9 @@ class MainActivity : BaseActivity(), OnToolbarListener {
         }
 
         savedInstanceState?.let { restoreInstanceState(it) }
-        window.statusBarColor = Color.TRANSPARENT
-        binding.lifecycleOwner = this
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = Color.TRANSPARENT
+        }
         // 蒙层颜色
         // binding.drawerLayout.setScrimColor(Color.RED)
         setupBottomNavigationMenuView()
@@ -89,8 +91,14 @@ class MainActivity : BaseActivity(), OnToolbarListener {
         // binding.bottomNavView.selectedItemId = R.id.nav_home
         binding.bottomNavView.apply { selectedItemId = menu[position].itemId }
         // 抽屉栏
-        setNavigationView()
+//        setNavigationView()
+        if (savedInstanceState != null) fragment = supportFragmentManager.findFragmentByTag(NavigationRoutePath.NAVIGATION_FRAGMENT)
+        if (fragment == null) fragment = ARouter.getInstance().build(NavigationRoutePath.NAVIGATION_FRAGMENT).navigation() as? Fragment
+        val ft = supportFragmentManager.beginTransaction()
+        fragment?.let { if (!it.isAdded) ft.add(R.id.navigation_container, it, NavigationRoutePath.NAVIGATION_FRAGMENT).commit() else ft.show(it).commit() }
     }
+
+    private var fragment: Fragment? = null
 
     // 恢复数据
     private fun restoreInstanceState(savedInstanceState: Bundle) {
@@ -173,22 +181,6 @@ class MainActivity : BaseActivity(), OnToolbarListener {
                 // 已经被添加,显示to
                 ft.show(to).commit()
             }
-        }
-    }
-
-    private fun setNavigationView() {
-        binding.navView.setNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_project -> ARouter.getInstance().build("/navigation/project").navigation()
-                R.id.nav_update -> {
-                    binding.navView.menu.findItem(R.id.nav_update).actionView.visibility = View.GONE
-                    ARouter.getInstance().build("/navigation/update").navigation()
-                }
-                R.id.nav_scan_code -> ARouter.getInstance().build("/navigation/scan_code").navigation()
-                R.id.nav_problem -> ARouter.getInstance().build("/navigation/problem").navigation()
-                R.id.nav_about -> ARouter.getInstance().build("/navigation/about").navigation()
-            }
-            true
         }
     }
 

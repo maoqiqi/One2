@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.viewModels
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.one.HomeRoutePath
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.home.R
 import com.codearms.maoqiqi.one.home.databinding.FragmentHomeBinding
@@ -11,11 +13,13 @@ import com.codearms.maoqiqi.one.listener.OnToolbarListener
 
 /**
  * 首页
+ * link: https://github.com/maoqiqi/one
+ * e-mail: fengqi.mao.march@gmail.com
  * author: March
- * date: 2020-11-01 21:01
+ * date: 2021-03-04 21:01
  * version v1.0.0
  */
-@Route(path = "/home/fragment")
+@Route(path = HomeRoutePath.HOME_FRAGMENT)
 class HomeFragment : BaseFragment() {
 
     private val binding: FragmentHomeBinding by binding()
@@ -26,8 +30,8 @@ class HomeFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
         if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)

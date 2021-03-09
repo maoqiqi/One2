@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.one.MovieRoutePath
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.movie.R
@@ -14,11 +16,13 @@ import com.flyco.tablayout.listener.OnTabSelectListener
 
 /**
  * 电影
+ * link: https://github.com/maoqiqi/one
+ * e-mail: fengqi.mao.march@gmail.com
  * author: March
- * date: 2020-11-01 21:01
+ * date: 2021-03-04 21:01
  * version v1.0.0
  */
-@Route(path = "/movie/fragment")
+@Route(path = MovieRoutePath.MOVIE_FRAGMENT)
 class MovieFragment : BaseFragment() {
 
     private val binding: FragmentMovieBinding by binding()
@@ -29,8 +33,8 @@ class MovieFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_movie, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
         if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)

@@ -1,8 +1,7 @@
 package com.codearms.maoqiqi.one.base
 
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.Fragment
+import android.os.Bundle
+import com.codearms.maoqiqi.log.LogFragment
 
 /**
  * Fragment 基类
@@ -10,10 +9,9 @@ import androidx.fragment.app.Fragment
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
-abstract class BaseFragment : LogFragment() {
+abstract class BaseFragment : AA() {
 
-    protected fun <T : ViewDataBinding> binding(): Lazy<T> = lazy {
-        DataBindingUtil.bind<T>(requireView())
-            ?: throw IllegalStateException("Fragment $this binding is fail or this was called before onCreateView().")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 }

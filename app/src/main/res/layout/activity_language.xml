@@ -18,14 +18,14 @@
             android:background="@color/colorPrimary"
             android:theme="@style/ToolBarDark"
             app:contentInsetStartWithNavigation="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:title="@string/language_setting" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorNavigationLight"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
             android:padding="16dp"
             android:text="@string/language_description"
             android:textColor="@color/white" />
@@ -33,7 +33,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorNavigationLight"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
             android:padding="16dp"
             android:text="@string/language_setting"
             android:textColor="@color/white" />
@@ -41,27 +42,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorNavigationLight"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
             android:padding="16dp"
             android:text="@string/language_auto"
             android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/btn_setting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="设置" />
+        <RelativeLayout
+            android:id="@+id/rl_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorMusic">
 
-        <Button
-            android:id="@+id/btn_auto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="自动" />
+            <TextView
+                android:id="@+id/iv_text_color"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:background="#99000000" />
+        </RelativeLayout>
 
-        <Button
-            android:id="@+id/btn_open"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="打开" />
+        <RelativeLayout
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/colorMusic">
+
+            <TextView
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_40"
+                android:layout_centerInParent="true"
+                android:background="#99000000" />
+        </RelativeLayout>
     </LinearLayout>
 </layout>

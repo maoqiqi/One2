@@ -4,18 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#5F7C8A</color>
 
+    <!--basic color-->
     <color name="transparent">#00FFFFFF</color>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-
-    <!-- 页面背景的颜色 -->
-    <color name="colorPageBackground">#f2f2f5</color>
-    <color name="navigationChecked">#f2f2f2</color>
-    <!--文字黑色-->
-    <color name="colorTextBlack">#191919</color>
-    <!--文字灰色-->
-    <color name="colorTextGray">#999999</color>
-    <color name="colorTextGrayDark">#666666</color>
+    <color name="bg">#f8f8f8</color>
+    <color name="bg_transparent">#88000000</color>
+    <color name="bg_mask">#33000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#040404</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -140,8 +135,8 @@
     <color name="gray_5">#83888f</color>
     <color name="gray_6">#6c6c6c</color>
     <color name="gray_7">#525252</color>
-    <color name="gray_8">#141414</color>
-    <color name="gray_9"></color>
+    <color name="gray_8">#333333</color>
+    <color name="gray_9">#141414</color>
 
     <!--Status Color-->
     <color name="success">#67c23a</color>
@@ -149,11 +144,12 @@
     <color name="danger">#f56c6c</color>
     <color name="info">#909399</color>
 
-    <!--Text Color-->
-    <color name="text_0">#c0c4cc</color>
-    <color name="text_1">#909399</color>
-    <color name="text_2">#606266</color>
-    <color name="text_3">#303133</color>
+    <color name="color_text_main">#333333</color>
+    <color name="color_text_main_sub">#666666</color>
+    <color name="color_text_secondary">#999999</color>
+    <color name="color_text_secondary_sub">#CCCCCC</color>
+    <color name="color_text_light">#FFFFFF</color>
+    <color name="color_text_light_pressed">#EEEEEE</color>
 
     <!--Line Color-->
     <color name="line_0">#f2f6fc</color>

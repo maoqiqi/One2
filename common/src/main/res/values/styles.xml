@@ -1,16 +1,32 @@
 <resources>
+    <!-- Activity打开关闭动画 -->
+    <style name="Animation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_to_right</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <item name="android:windowBackground">@color/white</item>
         <!--去除顶部下拉时的半月形阴影和上下滑动顶部和底部的虚化-->
         <item name="android:overScrollMode">never</item>
+        <item name="android:windowAnimationStyle">@style/Animation</item>
     </style>
 
     <style name="ToolBar" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="ToolBarDark" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!--注意,Toolbar的标题在横竖屏下字体大小不一样。所以需要指定标题栏字体大小。-->
+    <style name="toolbar_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/song</item>
+    </style>
 </resources>

@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.codearms.maoqiqi.one.home">
 
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     <application>
         <activity
-            android:name="com.codearms.maoqiqi.one.ui.HomeActivity"
+            android:name="com.codearms.maoqiqi.one.ui.HomeMainActivity"
             android:theme="@style/AppTheme.Home">
             <intent-filter android:label="example">
                 <action android:name="android.intent.action.VIEW" />

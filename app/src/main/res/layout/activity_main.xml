@@ -19,8 +19,8 @@
                 android:id="@+id/bottom_nav_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
                 android:background="?android:attr/windowBackground"
                 app:labelVisibilityMode="labeled"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -38,15 +38,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/navigation_container"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            android:theme="@style/AppTheme.Navigation"
-            app:headerLayout="@layout/layout_nav_header"
-            app:insetForeground="@color/transparent"
-            app:menu="@menu/menu_drawer" />
+            android:fitsSystemWindows="true" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

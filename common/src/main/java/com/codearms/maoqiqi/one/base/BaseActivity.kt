@@ -4,10 +4,8 @@ import android.view.MenuItem
 import android.view.animation.Animation
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import com.codearms.maoqiqi.log.LogActivity
 
 /**
  * AppCompatActivity 基类
@@ -22,10 +20,6 @@ abstract class BaseActivity : LogActivity() {
     private var tv: TextView? = null
     private var tvClose: TextView? = null
     private var anim: Animation? = null
-
-    protected fun <T : ViewDataBinding> binding(@LayoutRes resId: Int): Lazy<T> = lazy {
-        DataBindingUtil.setContentView(this, resId)
-    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) onBackPressed()

@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name="com.codearms.maoqiqi.one.ui.MusicActivity"
+            android:name="com.codearms.maoqiqi.one.ui.MusicMainActivity"
             android:theme="@style/AppTheme.Music">
             <intent-filter android:label="example">
                 <action android:name="android.intent.action.VIEW" />

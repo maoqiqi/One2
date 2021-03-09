@@ -16,18 +16,19 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorMusic"
+                android:background="@color/color_music"
                 android:theme="@style/ToolBarDark"
                 app:contentInsetStartWithNavigation="0dp"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ToolBarPopupTheme"
-                app:title="音乐" />
+                app:title="音乐"
+                app:titleTextAppearance="@style/toolbar_appearance" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorMusic"
+                android:background="@color/color_music"
                 android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
                 app:tabIndicatorColor="@color/white"
                 app:tabSelectedTextColor="@color/white" />

@@ -2,25 +2,27 @@ package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.one.BookRoutePath
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.book.R
 import com.codearms.maoqiqi.one.book.databinding.FragmentBookBinding
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.flyco.tablayout.listener.OnTabSelectListener
-import java.lang.Exception
 
 /**
  * 图书
+ * link: https://github.com/maoqiqi/one
+ * e-mail: fengqi.mao.march@gmail.com
  * author: March
- * date: 2020-11-01 21:01
+ * date: 2021-03-04 21:01
  * version v1.0.0
  */
-@Route(path = "/book/fragment")
+@Route(path = BookRoutePath.BOOK_FRAGMENT)
 class BookFragment : BaseFragment() {
 
     private val binding: FragmentBookBinding by binding()

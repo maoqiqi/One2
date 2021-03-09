@@ -1,6 +1,6 @@
 <resources>
     <style name="AppTheme.Movie">
-        <item name="colorPrimary">@color/colorMovie</item>
-        <item name="colorPrimaryDark">@color/colorMovie</item>
+        <item name="colorPrimary">@color/color_movie</item>
+        <item name="colorPrimaryDark">@color/color_movie</item>
     </style>
 </resources>

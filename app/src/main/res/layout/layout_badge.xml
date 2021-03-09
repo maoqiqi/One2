@@ -7,10 +7,11 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_width="@dimen/dp_8"
+            android:layout_height="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_32"
+            android:layout_marginLeft="@dimen/dp_32"
+            android:layout_marginBottom="@dimen/dp_32"
             android:background="@drawable/bg_red_point"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

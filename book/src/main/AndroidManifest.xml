@@ -3,13 +3,14 @@
     package="com.codearms.maoqiqi.one.book">
 
     <application
+        android:name="com.codearms.maoqiqi.one.BookApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Book">
-        <activity android:name="com.codearms.maoqiqi.one.ui.BookActivity">
+        <activity android:name="com.codearms.maoqiqi.one.ui.BookMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

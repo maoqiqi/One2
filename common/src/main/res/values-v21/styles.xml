@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/white</item>
+        <!--去除顶部下拉时的半月形阴影和上下滑动顶部和底部的虚化-->
+        <item name="android:overScrollMode">never</item>
+        <item name="android:windowAnimationStyle">@style/Animation</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <!-- 指定界面进入/退出动画效果 -->
+        <item name="android:windowEnterTransition">@transition/slide_anim</item>
+        <item name="android:windowExitTransition">@transition/slide_anim</item>
+        <item name="android:windowReturnTransition">@transition/slide_anim</item>
+        <item name="android:windowReenterTransition">@transition/slide_anim</item>
+        <!-- 指定共享元素进入/退出的动画效果 -->
+<!--        <item name="android:windowSharedElementEnterTransition">@transition/change_image_transform</item>-->
+<!--        <item name="android:windowSharedElementExitTransition">@transition/change_image_transform</item>-->
+    </style>
+</resources>
