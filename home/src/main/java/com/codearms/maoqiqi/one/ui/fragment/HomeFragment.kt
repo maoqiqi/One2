@@ -10,6 +10,7 @@ import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.home.R
 import com.codearms.maoqiqi.one.home.databinding.FragmentHomeBinding
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
+import com.codearms.maoqiqi.one.viewmodel.HomeViewModel
 
 /**
  * 首页
@@ -37,6 +38,8 @@ class HomeFragment : BaseFragment() {
         setHasOptionsMenu(true)
 
         binding.banner.addBannerLifecycleObserver(this)
+
+        viewModel.getBanner()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

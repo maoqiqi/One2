@@ -30,6 +30,7 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.3.0'
     // Banner
     implementation 'com.youth.banner:banner:2.1.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     // test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
