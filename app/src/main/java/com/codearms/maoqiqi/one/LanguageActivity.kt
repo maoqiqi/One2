@@ -2,10 +2,15 @@ package com.codearms.maoqiqi.one
 
 import android.content.Intent
 import android.os.Bundle
-import com.codearms.maoqiqi.language.LanguageManager
+import android.view.Menu
+import android.view.MenuItem
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
+import android.widget.RelativeLayout
+import com.codearms.maoqiqi.databinding.binding
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.databinding.ActivityLanguageBinding
-import java.util.*
 
 class LanguageActivity : BaseActivity() {
 
@@ -14,35 +19,40 @@ class LanguageActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binding.toolbar)
-        binding.btnSetting.setOnClickListener {
-            LanguageManager.getInstance().setLocale(this, getLanguageLocale(1))
-            recreate()
-        }
-        binding.btnAuto.setOnClickListener {
-            LanguageManager.getInstance().setFollowSystemLocale(this)
-            recreate()
-        }
-        binding.btnOpen.setOnClickListener { startActivity(Intent(this, LanguageActivity::class.java)) }
+
+        val dp22: Int = resources.getDimensionPixelSize(R.dimen.dp_22)
+        val dp24: Int = resources.getDimensionPixelSize(R.dimen.dp_24)
+        val dp40: Int = resources.getDimensionPixelSize(R.dimen.dp_40)
+
+
+        val rlParamsSelected: RelativeLayout.LayoutParams = RelativeLayout.LayoutParams(dp22, dp40)
+        rlParamsSelected.addRule(RelativeLayout.CENTER_IN_PARENT)
+
+        binding.ivTextColor.layoutParams = rlParamsSelected
+        binding.rlTextColor.setOnClickListener { binding.ivTextColor.startAnimation(getAnimationSmall()) }
     }
 
-    private fun getLanguageLocale(position: Int): Locale = when (position) {
-        0 -> Locale.getDefault()
-        1 -> Locale("ar") // 阿拉伯语
-        2 -> Locale.GERMAN // 德语
-        3 -> Locale.ENGLISH // 英语
-        4 -> Locale("es") // 西班牙语
-        5 -> Locale.FRENCH // 法语
-        6 -> Locale("hi") // 印地语
-        7 -> Locale("in")// 印度尼西亚语
-        8 -> Locale.ITALIAN // 意大利语
-        9 -> Locale.JAPAN // 日语
-        10 -> Locale.KOREAN // 韩语
-        11 -> Locale("pt") // 葡萄牙语
-        12 -> Locale("ru") // 俄语
-        13 -> Locale("th")  // 泰语
-        14 -> Locale("tl") // 菲律宾语
-        15 -> Locale("vi")  // 越南语
-        16 -> Locale.TRADITIONAL_CHINESE // 繁体中文
-        else -> Locale.SIMPLIFIED_CHINESE // 简体中文
+    private fun getAnimationSmall(): Animation = ScaleAnimation(
+        1.3f, 1f, 1.3f, 1f,
+        Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f
+    )
+        .apply {
+            interpolator = AccelerateDecelerateInterpolator()
+            duration = 150
+            fillAfter = true
+        }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu_language, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.menu_language) {
+            startActivity(Intent(this, LanguageSettingActivity::class.java))
+        }
+        return true
     }
 }

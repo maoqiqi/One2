@@ -12,12 +12,12 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorNavigation"
+            android:background="@color/color_navigation"
             android:theme="@style/ToolBarDark"
             app:contentInsetStartWithNavigation="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_back"
-            app:title="@string/update_description" />
+            app:title="@string/update"
+            app:titleTextAppearance="@style/toolbar_appearance" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

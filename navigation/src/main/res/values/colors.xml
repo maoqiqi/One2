@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Navigation-->
-    <color name="colorNavigation">#6200EE</color>
-    <color name="colorNavigationDark">#3700B3</color>
-    <color name="colorNavigationLight">#BB86FC</color>
+    <color name="color_navigation">#6200EE</color>
+    <color name="color_navigation_dark">#3700B3</color>
+    <color name="color_navigation_light">#BB86FC</color>
 </resources>

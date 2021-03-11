@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name="com.codearms.maoqiqi.one.ui.MovieActivity"
+            android:name="com.codearms.maoqiqi.one.ui.MovieMainActivity"
             android:theme="@style/AppTheme.Movie">
             <intent-filter android:label="example">
                 <action android:name="android.intent.action.VIEW" />

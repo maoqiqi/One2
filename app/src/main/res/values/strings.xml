@@ -11,12 +11,6 @@
     <string name="music">音乐</string>
     <string name="movie">影视</string>
 
-    <string name="project">项目介绍</string>
-    <string name="update">更新说明</string>
-    <string name="scan_code">扫码下载</string>
-    <string name="problem">问题反馈</string>
-    <string name="about">关于</string>
-
     <string name="language_description">中文简体</string>
     <string name="language_setting">语言设置</string>
     <string name="language_auto">自动</string>
@@ -54,7 +48,7 @@
         <item>Filipino</item>
         <!--越南语:values-vi-rVN-->
         <item>Người việt nam</item>
-        <!--中文繁体：values-zh-rTW-->
-        <item>中文繁体</item>
+        <!--繁体中文：values-zh-rTW-->
+        <item>繁体中文</item>
     </string-array>
 </resources>

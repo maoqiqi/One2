@@ -3,13 +3,14 @@
     package="com.codearms.maoqiqi.one.home">
 
     <application
+        android:name="com.codearms.maoqiqi.one.HomeApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Home">
-        <activity android:name="com.codearms.maoqiqi.one.ui.HomeActivity">
+        <activity android:name="com.codearms.maoqiqi.one.ui.HomeMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

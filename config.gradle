@@ -11,6 +11,14 @@ project.ext {
                 versionCode 1
                 versionName "1.0.0"
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                multiDexEnabled true
+            }
+
+            // ARouter路由配置
+            kapt {
+                arguments {
+                    arg("AROUTER_MODULE_NAME", project.getName())
+                }
             }
 
             sourceSets {
@@ -39,6 +47,13 @@ project.ext {
             buildFeatures {
                 dataBinding = true
             }
+        }
+
+        dependencies {
+            implementation "androidx.multidex:multidex:2.0.1"
+            // ARouter
+            implementation 'com.alibaba:arouter-api:1.5.1'
+            kapt 'com.alibaba:arouter-compiler:1.5.1'
         }
     }
 }

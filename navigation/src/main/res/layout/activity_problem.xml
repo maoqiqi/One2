@@ -12,12 +12,120 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorNavigation"
+            android:background="@color/color_navigation"
             android:theme="@style/ToolBarDark"
             app:contentInsetStartWithNavigation="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_back"
-            app:title="@string/problem_feedback" />
+            app:title="@string/problem"
+            app:titleTextAppearance="@style/toolbar_appearance" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            android:background="@drawable/bg_text_hint"
+            android:lineSpacingExtra="@dimen/dp_4"
+            android:padding="@dimen/dp_12"
+            android:text="@string/problem_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <View
+            android:id="@+id/line_top_issues"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_32"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+        <TextView
+            android:id="@+id/tv_issues"
+            style="@style/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/issues"
+            app:layout_constraintTop_toBottomOf="@id/line_top_issues" />
+
+        <Button
+            android:id="@+id/tv_one"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/app_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_issues" />
+
+        <View
+            android:id="@+id/line_bottom_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+        <Button
+            android:id="@+id/tv_faq"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/faq"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_one" />
+
+        <View
+            android:id="@+id/line_bottom_faq"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_faq" />
+
+        <View
+            android:id="@+id/line_top_contact"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_faq" />
+
+        <TextView
+            android:id="@+id/tv_contact"
+            style="@style/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_me"
+            app:layout_constraintTop_toBottomOf="@id/line_top_contact" />
+
+        <Button
+            android:id="@+id/tv_qq"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/qq"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact" />
+
+        <View
+            android:id="@+id/line_bottom_qq"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_qq" />
+
+        <Button
+            android:id="@+id/tv_email"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/email"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_qq" />
+
+        <View
+            android:id="@+id/line_bottom_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_email" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

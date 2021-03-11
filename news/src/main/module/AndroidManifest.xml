@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name="com.codearms.maoqiqi.one.ui.NewsActivity"
+            android:name="com.codearms.maoqiqi.one.ui.NewsMainActivity"
             android:theme="@style/AppTheme.News">
             <intent-filter android:label="example">
                 <action android:name="android.intent.action.VIEW" />

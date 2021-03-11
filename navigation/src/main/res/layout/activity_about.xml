@@ -12,12 +12,172 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorNavigation"
+            android:background="@color/color_navigation"
             android:theme="@style/ToolBarDark"
             app:contentInsetStartWithNavigation="0dp"
-            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_back"
-            app:title="@string/about" />
+            app:title="@string/about"
+            app:titleTextAppearance="@style/toolbar_appearance" />
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:background="@drawable/bg_logo"
+            android:contentDescription="@string/image_description"
+            android:padding="@dimen/dp_16"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/current_version"
+            android:textAllCaps="true"
+            android:textAppearance="@style/song"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+        <View
+            android:id="@+id/line_top_project"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_32"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_version" />
+
+        <Button
+            android:id="@+id/btn_project"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/project"
+            app:layout_constraintTop_toBottomOf="@id/line_top_project" />
+
+        <View
+            android:id="@+id/line_bottom_project"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/btn_project" />
+
+        <Button
+            android:id="@+id/btn_check"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/check_update"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_project" />
+
+        <View
+            android:id="@+id/line_bottom_check"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/btn_check" />
+
+        <Button
+            android:id="@+id/btn_update"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/update"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_check" />
+
+        <View
+            android:id="@+id/line_bottom_update"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/btn_update" />
+
+        <Button
+            android:id="@+id/btn_star"
+            style="@style/btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:text="@string/give_a_star"
+            app:layout_constraintTop_toBottomOf="@id/line_bottom_update" />
+
+        <View
+            android:id="@+id/line_bottom_star"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/line_1"
+            app:layout_constraintTop_toBottomOf="@id/btn_star" />
+
+        <TextView
+            android:id="@+id/tv_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:text="@string/copyright"
+            android:textAppearance="@style/song"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_dou_ban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:text="@string/dou_ban"
+            android:textAppearance="@style/song"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toTopOf="@id/tv_copyright"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@color/line_1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_dou_ban"
+            app:layout_constraintLeft_toLeftOf="@id/tv_dou_ban"
+            app:layout_constraintRight_toRightOf="@id/tv_dou_ban" />
+
+        <TextView
+            android:id="@+id/tv_gank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:text="@string/gank"
+            android:textAppearance="@style/song"
+            android:textColor="@color/color_text_secondary"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toTopOf="@id/tv_dou_ban"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_12"
+            android:background="@color/line_1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_gank"
+            app:layout_constraintLeft_toLeftOf="@id/tv_gank"
+            app:layout_constraintRight_toRightOf="@id/tv_gank" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name="com.codearms.maoqiqi.one.ui.NavigationMainActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
             android:name="com.codearms.maoqiqi.one.ui.ProjectActivity"
             android:theme="@style/AppTheme.Navigation" />
         <activity
@@ -17,6 +20,12 @@
             android:theme="@style/AppTheme.Navigation" />
         <activity
             android:name="com.codearms.maoqiqi.one.ui.AboutActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
+            android:name="com.codearms.maoqiqi.one.ui.DonateActivity"
+            android:theme="@style/AppTheme.Navigation" />
+        <activity
+            android:name="com.codearms.maoqiqi.one.ui.SettingActivity"
             android:theme="@style/AppTheme.Navigation" />
     </application>
 
