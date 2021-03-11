@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.codearms.maoqiqi.one.ui.fragment.NavigationFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/AppTheme.Navigation"
+            app:elevation="0dp"
+            app:headerLayout="@layout/layout_nav_header"
+            app:insetForeground="@color/transparent"
+            app:itemIconTint="@color/color_text_main_sub"
+            app:itemTextAppearance="@style/navigation_appearance"
+            app:itemTextColor="@color/color_text_main"
+            app:layout_constraintBottom_toTopOf="@id/tv_setting"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_navigation" />
+
+        <!--app:insetForeground="@color/transparent"去掉侧滑状态栏遮罩层-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_16"
+                android:text="@string/setting"
+                android:textAppearance="@style/song"
+                android:textColor="@color/color_text_main"
+                android:textSize="@dimen/sp_10"
+                app:drawableTint="@color/color_text_main_selector"
+                app:drawableTopCompat="@drawable/ic_nav_setting"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_16"
+                android:text="@string/mode_night"
+                android:textAppearance="@style/song"
+                android:textColor="@color/color_text_main"
+                android:textSize="@dimen/sp_10"
+                app:drawableTint="@color/color_text_main_selector"
+                app:drawableTopCompat="@drawable/ic_nav_night_mode"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_setting" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                app:layout_constraintBottom_toBottomOf="@id/tv_mode"
+                app:layout_constraintLeft_toRightOf="@id/tv_mode"
+                app:layout_constraintTop_toTopOf="@id/tv_mode">
+
+                <TextView
+                    android:id="@+id/tv_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weather"
+                    android:textAppearance="@style/song"
+                    android:textColor="@color/color_text_main_sub_selector"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toTopOf="@id/tv_address"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/address"
+                    android:textAppearance="@style/song"
+                    android:textColor="@color/color_text_main"
+                    android:textSize="@dimen/sp_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_weather" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

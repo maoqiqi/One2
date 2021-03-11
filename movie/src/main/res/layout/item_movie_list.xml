@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/dp_16">
+
+        <ImageView
+            android:id="@+id/iv_movie"
+            android:layout_width="@dimen/dp_85"
+            android:layout_height="@dimen/dp_120"
+            android:contentDescription="@string/image_description"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_movie"
+            android:transitionName="@string/transition_movie_img"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/tv_movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/color_text_main"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintLeft_toRightOf="@id/iv_movie"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="标题" />
+
+        <TextView
+            android:id="@+id/tv_movie_director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textColor="@color/color_text_main"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tv_movie_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_title"
+            tools:text="导演" />
+
+        <TextView
+            android:id="@+id/tv_movie_cast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:textColor="@color/color_text_main"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tv_movie_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_director"
+            tools:text="主演" />
+
+        <TextView
+            android:id="@+id/tv_movie_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:textColor="@color/color_text_main"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tv_movie_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_cast"
+            tools:text="类型" />
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:progressDrawable="@drawable/ic_rating_bar"
+            android:rating="1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_movie_rating"
+            app:layout_constraintLeft_toLeftOf="@id/tv_movie_title"
+            app:layout_constraintTop_toTopOf="@id/tv_movie_rating" />
+
+        <TextView
+            android:id="@+id/tv_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:textColor="@color/color_text_main"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/rating_bar"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_genre"
+            tools:text="9.0" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="rating_bar,tv_movie_rating" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
