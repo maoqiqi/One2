@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Transparent">
             <intent-filter android:label="example">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -64,14 +66,15 @@
                     android:pathPrefix="/gizmos"
                     android:scheme="https" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ShortcutsActivity" />
-        <activity android:name=".LanguageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ShortcutsActivity" />
+        <activity android:name=".LanguageActivity">
+
         </activity>
         <activity android:name=".LanguageSettingActivity" />
     </application>

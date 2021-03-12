@@ -3,4 +3,10 @@
     <string name="search">搜索</string>
     <string name="share">分享</string>
     <string name="image_description">image description</string>
+    <!-- 主页面 -->
+    <string name="home">首页</string>
+    <string name="news">新闻</string>
+    <string name="music">音乐</string>
+    <string name="book">图书</string>
+    <string name="movie">影视</string>
 </resources>

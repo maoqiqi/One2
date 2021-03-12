@@ -6,8 +6,8 @@ import android.util.Log
 import androidx.multidex.MultiDex
 import com.codearms.maoqiqi.language.LanguageManager
 import com.codearms.maoqiqi.language.store.MMKVLocaleStore
-import com.codearms.maoqiqi.one.app.ComponentCallbacks
-import com.codearms.maoqiqi.one.app.LifecycleCallbacks
+import com.codearms.maoqiqi.log.LogComponentCallbacks
+import com.codearms.maoqiqi.log.LogLifecycleCallbacks
 
 class App : Application() {
 
@@ -19,8 +19,8 @@ class App : Application() {
         Log.e(tag, "-->configuration:${resources.configuration}")
         Log.e(tag, "-->configuration:${resources.configuration.getLocaleCompat()}")
         MultiDex.install(this)
-        registerActivityLifecycleCallbacks(LifecycleCallbacks)
-        registerComponentCallbacks(ComponentCallbacks)
+        registerActivityLifecycleCallbacks(LogLifecycleCallbacks())
+        registerComponentCallbacks(LogComponentCallbacks())
         LanguageManager.init(this, MMKVLocaleStore(this))
     }
 }

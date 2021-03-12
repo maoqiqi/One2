@@ -2,7 +2,7 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
         android:enabled="true"
-        android:icon="@drawable/ic_tab_movie_checked"
+        android:icon="@drawable/ic_tab_movie"
         android:shortcutDisabledMessage="@string/news"
         android:shortcutId="compose"
         android:shortcutLongLabel="@string/home"
@@ -23,7 +23,7 @@
     </shortcut>
     <shortcut
         android:enabled="true"
-        android:icon="@drawable/ic_tab_home_checked"
+        android:icon="@drawable/ic_tab_home"
         android:shortcutDisabledMessage="@string/news"
         android:shortcutId="home"
         android:shortcutLongLabel="@string/home"
@@ -35,7 +35,7 @@
     </shortcut>
     <shortcut
         android:enabled="true"
-        android:icon="@drawable/ic_tab_news_checked"
+        android:icon="@drawable/ic_tab_news"
         android:shortcutDisabledMessage="@string/news"
         android:shortcutId="news"
         android:shortcutLongLabel="@string/home"

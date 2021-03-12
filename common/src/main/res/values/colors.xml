@@ -156,4 +156,15 @@
     <color name="line_1">#ebeef5</color>
     <color name="line_2">#e4e7ed</color>
     <color name="line_3">#dcdfe6</color>
+
+    <color name="color_home">#FF9800</color>
+
+    <color name="color_news">#0F88EB</color>
+    <color name="color_book">#009688</color>
+    <color name="color_music">#ce3d3a</color>
+    <color name="color_movie">#1e1e1e</color>
+    <!--Navigation-->
+    <color name="color_navigation">#6200EE</color>
+    <color name="color_navigation_dark">#3700B3</color>
+    <color name="color_navigation_light">#BB86FC</color>
 </resources>

@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.codearms.maoqiqi.one.FragmentManagerUtils.addFragment
 import com.codearms.maoqiqi.one.NewsRoutePath
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
@@ -27,7 +28,7 @@ class NewsMainActivity : BaseActivity(), OnToolbarListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val newFragment: Fragment? = ARouter.getInstance().build(NewsRoutePath.NEWS_FRAGMENT).navigation() as? Fragment
-        addFragment(savedInstanceState, tag, newFragment, R.id.container)
+        addFragment(R.id.container, newFragment, tag, savedInstanceState)
     }
 
     override fun onToolbar(toolbar: Toolbar?) {

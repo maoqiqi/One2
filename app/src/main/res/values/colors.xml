@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Navigation-->
-    <color name="color_navigation">#6200EE</color>
-    <color name="color_navigation_dark">#3700B3</color>
-    <color name="color_navigation_light">#BB86FC</color>
 
-    <color name="colorHome">#FF9800</color>
-
-    <color name="colorNews">#0F88EB</color>
-
-    <color name="colorBook">#009688</color>
-
-    <color name="colorMusic">#ce3d3a</color>
-
-    <color name="colorMovie">#1e1e1e</color>
 </resources>

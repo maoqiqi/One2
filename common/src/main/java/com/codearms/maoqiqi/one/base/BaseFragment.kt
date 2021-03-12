@@ -9,7 +9,7 @@ import com.codearms.maoqiqi.log.LogFragment
  * date: 2020-11-01 21:01
  * version v1.0.0
  */
-abstract class BaseFragment : AA() {
+abstract class BaseFragment : LogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

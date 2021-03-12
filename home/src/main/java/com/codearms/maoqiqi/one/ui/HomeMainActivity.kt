@@ -1,11 +1,11 @@
 package com.codearms.maoqiqi.one.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.codearms.maoqiqi.one.FragmentManagerUtils.addFragment
 import com.codearms.maoqiqi.one.HomeRoutePath
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.home.R
@@ -31,7 +31,7 @@ class HomeMainActivity : BaseActivity(), OnToolbarListener {
 //            window.statusBarColor = Color.TRANSPARENT
 //        }
         val newFragment: Fragment? = ARouter.getInstance().build(HomeRoutePath.HOME_FRAGMENT).navigation() as? Fragment
-        addFragment(savedInstanceState, tag, newFragment, R.id.container)
+        addFragment(R.id.container, newFragment, tag, savedInstanceState)
     }
 
     override fun onToolbar(toolbar: Toolbar?) {

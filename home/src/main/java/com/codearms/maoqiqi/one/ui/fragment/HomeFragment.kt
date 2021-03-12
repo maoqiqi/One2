@@ -39,7 +39,7 @@ class HomeFragment : BaseFragment() {
 
         binding.banner.addBannerLifecycleObserver(this)
 
-        viewModel.getBanner()
+//        viewModel.getBanner()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

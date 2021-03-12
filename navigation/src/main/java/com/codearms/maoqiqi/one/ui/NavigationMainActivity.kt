@@ -7,6 +7,7 @@ import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.codearms.maoqiqi.one.FragmentManagerUtils.addFragment
 import com.codearms.maoqiqi.one.NavigationRoutePath
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.navigation.R
@@ -56,6 +57,6 @@ class NavigationMainActivity : BaseActivity() {
         }
 
         val newFragment: Fragment? = ARouter.getInstance().build(NavigationRoutePath.NAVIGATION_FRAGMENT).navigation() as? Fragment
-        addFragment(savedInstanceState, tag, newFragment, R.id.container)
+        addFragment(R.id.container, newFragment, tag, savedInstanceState)
     }
 }

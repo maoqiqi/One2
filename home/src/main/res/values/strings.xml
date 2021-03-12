@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Home</string>
-    <string name="home">首页</string>
     <string name="classify">分类</string>
 </resources>
