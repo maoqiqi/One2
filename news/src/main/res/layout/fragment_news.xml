@@ -14,8 +14,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/color_news_gradient"
             android:fitsSystemWindows="true"
-            app:layout_constraintTop_toTopOf="parent"
-            app:statusBarForeground="@color/color_music">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -25,7 +24,7 @@
                 app:contentInsetStartWithNavigation="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ToolBarPopupTheme"
+                app:popupTheme="@style/ToolBarPopupTheme.News"
                 app:title="@string/news"
                 app:titleTextAppearance="@style/toolbar_appearance" />
 

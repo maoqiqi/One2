@@ -16,14 +16,7 @@
 
 package com.codearms.maoqiqi.one
 
-import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.codearms.maoqiqi.one.bean.CommonBean
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 /**
  * ViewModel 基类

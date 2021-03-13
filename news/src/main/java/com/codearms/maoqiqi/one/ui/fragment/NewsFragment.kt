@@ -8,13 +8,18 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.log.LogUtils
+import com.codearms.maoqiqi.one.AppBarStateChangeListener
 import com.codearms.maoqiqi.one.AppUtils.getAppVersionCode
 import com.codearms.maoqiqi.one.AppUtils.getAppVersionName
 import com.codearms.maoqiqi.one.NewsRoutePath
+import com.codearms.maoqiqi.one.StatusBarUtils.getSystemUiVisibility
+import com.codearms.maoqiqi.one.StatusBarUtils.setStatusBarModel
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.news.R
 import com.codearms.maoqiqi.one.news.databinding.FragmentNewsBinding
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 
 /**
@@ -29,6 +34,7 @@ import com.google.android.material.tabs.TabLayout
 class NewsFragment : BaseFragment() {
 
     private val binding: FragmentNewsBinding by binding()
+    private val uiOptions: Int by lazy { requireActivity().getSystemUiVisibility() }
     private val titles = arrayOf(
         "推荐", "热点", "社会", "娱乐", "情感", "故事", "小说", "星座", "科技", "财经",
         "体育", "军事", "教育", "历史", "搞笑", "奇闻", "游戏", "时尚", "养生", "旅行"
@@ -41,9 +47,12 @@ class NewsFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
-
+        binding.appBarLayout.addOnOffsetChangedListener(object : AppBarStateChangeListener(true) {
+            override fun onStateChanged(appBarLayout: AppBarLayout, state: State, percentage: Float) {
+                appBarLayout.setBackgroundResource(getAppBarLayoutBackgroundResource(state, percentage))
+            }
+        })
         binding.viewPager.adapter = adapter
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
@@ -63,13 +72,41 @@ class NewsFragment : BaseFragment() {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
+    }
+
+    private fun getAppBarLayoutBackgroundResource(state: AppBarStateChangeListener.State, percentage: Float) = when (state) {
+        AppBarStateChangeListener.State.EXPANDED -> {
+            requireActivity().setStatusBarModel(uiOptions)
+            R.drawable.color_news_gradient
+        }
+        AppBarStateChangeListener.State.COLLAPSED -> {
+            requireActivity().setStatusBarModel(uiOptions, true)
+            R.color.white
+        }
+        else -> {
+            if (percentage <= 0.5) {
+                requireActivity().setStatusBarModel(uiOptions)
+                R.drawable.color_news_gradient
+            } else {
+                requireActivity().setStatusBarModel(uiOptions, true)
+                R.color.white
+            }
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_search, menu)
-        inflater.inflate(R.menu.menu_news, menu)
+        if (isShow) {
+            inflater.inflate(R.menu.menu_search, menu)
+            inflater.inflate(R.menu.menu_news, menu)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (isShow) LogUtils.v(logInfo, "item:${item.itemId}")
         when (item.itemId) {
             R.id.menu_search -> {
                 Toast.makeText(context, "${context.getAppVersionCode()}--${context.getAppVersionName()}", Toast.LENGTH_SHORT).show()

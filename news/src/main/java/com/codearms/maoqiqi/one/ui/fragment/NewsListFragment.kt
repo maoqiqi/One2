@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.log.LogUtils
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.news.R
 import com.codearms.maoqiqi.one.news.databinding.FragmentNewsListBinding
@@ -37,6 +38,7 @@ class NewsListFragment : BaseFragment() {
             args.putInt("position", position)
             val fragment = NewsListFragment()
             fragment.arguments = args
+            fragment.logInfo = LogUtils.LogInfo("NewsListFragment$position")
             return fragment
         }
     }

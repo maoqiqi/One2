@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme.Home">
         <item name="colorPrimary">@color/color_home</item>
         <item name="colorPrimaryDark">@color/color_home</item>

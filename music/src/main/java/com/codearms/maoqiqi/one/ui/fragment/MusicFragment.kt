@@ -7,11 +7,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.log.LogUtils
+import com.codearms.maoqiqi.one.AppBarStateChangeListener
 import com.codearms.maoqiqi.one.MusicRoutePath
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
 import com.codearms.maoqiqi.one.music.R
 import com.codearms.maoqiqi.one.music.databinding.FragmentMusicBinding
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.tabs.TabLayout
 
 /**
@@ -35,10 +38,17 @@ class MusicFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
-        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
-
+        // 解决滑动到顶部还显示部分标题
+        val layoutParams = binding.view.layoutParams
+        val viewHeight = layoutParams.height
+        binding.appBarLayout.addOnOffsetChangedListener(object : AppBarStateChangeListener(true) {
+            override fun onStateChanged(appBarLayout: AppBarLayout, state: State, percentage: Float) {
+                layoutParams.height = (viewHeight * percentage).toInt()
+                binding.view.layoutParams = layoutParams
+            }
+        })
+        binding.viewPager.offscreenPageLimit = 1
         binding.viewPager.adapter = adapter
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
@@ -58,12 +68,18 @@ class MusicFragment : BaseFragment() {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_search, menu)
+        if (isShow) inflater.inflate(R.menu.menu_search, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (isShow) LogUtils.v(logInfo, "item:${item.itemId}")
         return super.onOptionsItemSelected(item)
     }
 

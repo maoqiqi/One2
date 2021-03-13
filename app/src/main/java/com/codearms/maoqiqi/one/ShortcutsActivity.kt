@@ -2,10 +2,6 @@ package com.codearms.maoqiqi.one
 
 import android.app.PendingIntent
 import android.content.Intent
-import android.content.pm.ShortcutInfo
-import android.content.pm.ShortcutManager
-import android.graphics.drawable.Icon
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
@@ -40,8 +36,10 @@ class ShortcutsActivity : BaseActivity() {
         shortcutManager.disableShortcuts(listOf("id1"))*/
 
         val fullScreenIntent = Intent(this, MainActivity::class.java)
-        val fullScreenPendingIntent = PendingIntent.getActivity(this, 0,
-            fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val fullScreenPendingIntent = PendingIntent.getActivity(
+            this, 0,
+            fullScreenIntent, PendingIntent.FLAG_UPDATE_CURRENT
+        )
 
         val notificationBuilder =
             NotificationCompat.Builder(this, "CHANNEL_ID")

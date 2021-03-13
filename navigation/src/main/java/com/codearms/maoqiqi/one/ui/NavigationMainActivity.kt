@@ -1,14 +1,12 @@
 package com.codearms.maoqiqi.one.ui
 
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.codearms.maoqiqi.one.FragmentManagerUtils.addFragment
 import com.codearms.maoqiqi.one.NavigationRoutePath
+import com.codearms.maoqiqi.one.StatusBarUtils.setFullScreen
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.navigation.R
 
@@ -47,15 +45,7 @@ class NavigationMainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS or WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.statusBarColor = Color.TRANSPARENT
-        } else {
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-                window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            }
-        }
-
+        setFullScreen(true, true)
         val newFragment: Fragment? = ARouter.getInstance().build(NavigationRoutePath.NAVIGATION_FRAGMENT).navigation() as? Fragment
         addFragment(R.id.container, newFragment, tag, savedInstanceState)
     }

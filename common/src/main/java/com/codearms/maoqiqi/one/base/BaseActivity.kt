@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.codearms.maoqiqi.log.LogActivity
+import com.codearms.maoqiqi.log.LogUtils
 
 /**
  * AppCompatActivity 基类
@@ -14,6 +15,10 @@ import com.codearms.maoqiqi.log.LogActivity
  * version v1.0.0
  */
 abstract class BaseActivity : LogActivity() {
+
+    init {
+        logInfo = LogUtils.LogInfo(javaClass.simpleName, false, false)
+    }
 
     private var dialog: AlertDialog? = null
     private var iv: ImageView? = null

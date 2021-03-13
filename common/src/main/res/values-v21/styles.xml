@@ -19,7 +19,12 @@
         <item name="android:windowReturnTransition">@transition/slide_anim</item>
         <item name="android:windowReenterTransition">@transition/slide_anim</item>
         <!-- 指定共享元素进入/退出的动画效果 -->
-<!--        <item name="android:windowSharedElementEnterTransition">@transition/change_image_transform</item>-->
-<!--        <item name="android:windowSharedElementExitTransition">@transition/change_image_transform</item>-->
+        <!--        <item name="android:windowSharedElementEnterTransition">@transition/change_image_transform</item>-->
+        <!--        <item name="android:windowSharedElementExitTransition">@transition/change_image_transform</item>-->
+    </style>
+
+    <!--状态栏透明-->
+    <style name="AppTheme.Transparent">
+        <item name="android:statusBarColor">@color/transparent</item>
     </style>
 </resources>

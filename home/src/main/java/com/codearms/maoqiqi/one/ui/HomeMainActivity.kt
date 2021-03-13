@@ -7,6 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.codearms.maoqiqi.one.FragmentManagerUtils.addFragment
 import com.codearms.maoqiqi.one.HomeRoutePath
+import com.codearms.maoqiqi.one.StatusBarUtils.setFullScreen
 import com.codearms.maoqiqi.one.base.BaseActivity
 import com.codearms.maoqiqi.one.home.R
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
@@ -27,14 +28,13 @@ class HomeMainActivity : BaseActivity(), OnToolbarListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-//            window.statusBarColor = Color.TRANSPARENT
-//        }
+        setFullScreen(true, true)
         val newFragment: Fragment? = ARouter.getInstance().build(HomeRoutePath.HOME_FRAGMENT).navigation() as? Fragment
         addFragment(R.id.container, newFragment, tag, savedInstanceState)
     }
 
     override fun onToolbar(toolbar: Toolbar?) {
+        toolbar?.setNavigationIcon(R.drawable.ic_back)
         setSupportActionBar(toolbar)
     }
 }

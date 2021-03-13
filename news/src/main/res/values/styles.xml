@@ -1,10 +1,11 @@
 <resources>
+
     <style name="AppTheme.News">
         <item name="colorPrimary">@color/color_news</item>
         <item name="colorPrimaryDark">@color/color_news</item>
     </style>
 
-    <style name="ToolBarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+    <style name="ToolBarPopupTheme.News">
         <item name="android:textColorPrimary">@color/color_news</item>
     </style>
 </resources>

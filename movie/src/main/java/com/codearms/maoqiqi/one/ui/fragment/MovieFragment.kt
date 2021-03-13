@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.log.LogUtils
 import com.codearms.maoqiqi.one.MovieRoutePath
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.listener.OnToolbarListener
@@ -35,10 +36,7 @@ class MovieFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
-        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
-
         binding.viewPager.adapter = adapter
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
@@ -57,12 +55,18 @@ class MovieFragment : BaseFragment() {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_search, menu)
+        if (isShow) inflater.inflate(R.menu.menu_search, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (isShow) LogUtils.v(logInfo, "item:${item.itemId}")
         return super.onOptionsItemSelected(item)
     }
 

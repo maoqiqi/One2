@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Home">
-        <activity android:name="com.codearms.maoqiqi.one.ui.HomeMainActivity">
+        <activity
+            android:name="com.codearms.maoqiqi.one.ui.HomeMainActivity"
+            android:theme="@style/AppTheme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

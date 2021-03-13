@@ -1,10 +1,11 @@
 <resources>
+
     <style name="AppTheme.Music">
         <item name="colorPrimary">@color/color_music</item>
         <item name="colorPrimaryDark">@color/color_music</item>
     </style>
 
-    <style name="ToolBarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+    <style name="ToolBarPopupTheme.Music">
         <item name="android:textColorPrimary">@color/color_music</item>
     </style>
 </resources>

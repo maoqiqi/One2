@@ -2,9 +2,13 @@ package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.log.LogUtils
+import com.codearms.maoqiqi.one.AppUtils.getAppVersionCode
+import com.codearms.maoqiqi.one.AppUtils.getAppVersionName
 import com.codearms.maoqiqi.one.HomeRoutePath
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.home.R
@@ -33,21 +37,30 @@ class HomeFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
-        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
         setHasOptionsMenu(true)
-
         binding.banner.addBannerLifecycleObserver(this)
 
 //        viewModel.getBanner()
     }
 
+    override fun onResume() {
+        super.onResume()
+        // activity?.javaClass?.getMethod("associateToolbar", Toolbar::class.java)?.invoke(activity, binding.toolbar)
+        if (activity is OnToolbarListener) (activity as OnToolbarListener).onToolbar(binding.toolbar)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_home, menu)
+        if (isShow) inflater.inflate(R.menu.menu_home, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (isShow) LogUtils.v(logInfo, "item:${item.itemId}")
+        when (item.itemId) {
+            R.id.menu_search -> {
+                Toast.makeText(context, "${context.getAppVersionCode()}--${context.getAppVersionName()}", Toast.LENGTH_SHORT).show()
+            }
+        }
         return super.onOptionsItemSelected(item)
     }
 }

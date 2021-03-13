@@ -25,8 +25,8 @@ class BookListFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_book_list, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val position = arguments?.getInt("position", 0)
         binding.tv.text = "BookListFragment:$position"
     }

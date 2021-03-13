@@ -2,48 +2,49 @@
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
         android:enabled="true"
-        android:icon="@drawable/ic_tab_movie"
-        android:shortcutDisabledMessage="@string/news"
-        android:shortcutId="compose"
-        android:shortcutLongLabel="@string/home"
-        android:shortcutShortLabel="@string/movie">
+        android:icon="@drawable/ic_logo"
+        android:shortcutId="all"
+        android:shortcutShortLabel="@string/app_name">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.codearms.maoqiqi.one.ShortcutsActivity"
-            android:targetPackage="com.codearms.maoqiqi.one" />
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="com.codearms.maoqiqi.one.ui.HomeActivity"
+            android:targetClass="com.codearms.maoqiqi.one.ui.HomeMainActivity"
             android:targetPackage="com.codearms.maoqiqi.one.home" />
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.codearms.maoqiqi.one.ui.NewsActivity"
+            android:targetClass="com.codearms.maoqiqi.one.ui.NewsMainActivity"
+            android:targetPackage="com.codearms.maoqiqi.one.news" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_tab_book"
+        android:shortcutId="book"
+        android:shortcutShortLabel="@string/book">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.codearms.maoqiqi.one.ui.BookMainActivity"
+            android:targetPackage="com.codearms.maoqiqi.one.book" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_tab_news"
+        android:shortcutId="news"
+        android:shortcutShortLabel="@string/news">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.codearms.maoqiqi.one.ui.NewsMainActivity"
             android:targetPackage="com.codearms.maoqiqi.one.news" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
     <shortcut
         android:enabled="true"
         android:icon="@drawable/ic_tab_home"
-        android:shortcutDisabledMessage="@string/news"
         android:shortcutId="home"
-        android:shortcutLongLabel="@string/home"
-        android:shortcutShortLabel="@string/movie">
+        android:shortcutShortLabel="@string/home">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetClass="com.codearms.maoqiqi.one.ui.HomeActivity"
+            android:targetClass="com.codearms.maoqiqi.one.ui.HomeMainActivity"
             android:targetPackage="com.codearms.maoqiqi.one.home" />
-    </shortcut>
-    <shortcut
-        android:enabled="true"
-        android:icon="@drawable/ic_tab_news"
-        android:shortcutDisabledMessage="@string/news"
-        android:shortcutId="news"
-        android:shortcutLongLabel="@string/home"
-        android:shortcutShortLabel="@string/movie">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="com.codearms.maoqiqi.one.ui.NewsActivity"
-            android:targetPackage="com.codearms.maoqiqi.one.news" />
-        <categories android:name="android.shortcut.conversation" />
     </shortcut>
 </shortcuts>

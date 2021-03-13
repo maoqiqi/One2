@@ -9,9 +9,10 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_music"
+            android:background="@drawable/color_music_gradient"
             android:fitsSystemWindows="true">
 
             <androidx.appcompat.widget.Toolbar
@@ -21,18 +22,25 @@
                 android:theme="@style/ToolBarDark"
                 app:contentInsetStartWithNavigation="0dp"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ToolBarPopupTheme"
+                app:popupTheme="@style/ToolBarPopupTheme.Music"
                 app:title="@string/music"
                 app:titleTextAppearance="@style/toolbar_appearance" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_5"
+                app:layout_scrollFlags="scroll|enterAlways" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/color_music"
+                android:background="@color/transparent"
                 android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
                 app:tabIndicatorColor="@color/white"
-                app:tabSelectedTextColor="@color/white" />
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextAppearance="@style/song" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager2.widget.ViewPager2

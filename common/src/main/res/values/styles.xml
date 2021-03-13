@@ -19,9 +19,21 @@
         <item name="android:windowAnimationStyle">@style/Animation</item>
     </style>
 
+    <style name="AppTheme.Transparent">
+
+    </style>
+
     <style name="ToolBar" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="ToolBarDark" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="ToolBarPopupTheme" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolBarPopupThemeDark" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="song" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/song</item>
+    </style>
 
     <!--注意,Toolbar的标题在横竖屏下字体大小不一样。所以需要指定标题栏字体大小。-->
     <style name="toolbar_appearance" parent="@android:style/TextAppearance">

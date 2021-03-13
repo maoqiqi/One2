@@ -27,10 +27,6 @@
         <!--<item name="colorControlActivated">@color/color_navigation</item>-->
     </style>
 
-    <style name="song" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/song</item>
-    </style>
-
     <style name="title">
         <item name="android:paddingLeft">@dimen/dp_16</item>
         <item name="android:paddingRight">@dimen/dp_16</item>

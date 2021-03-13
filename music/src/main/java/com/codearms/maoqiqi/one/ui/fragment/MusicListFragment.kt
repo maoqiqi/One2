@@ -3,6 +3,7 @@ package com.codearms.maoqiqi.one.ui.fragment
 import android.os.Bundle
 import android.view.*
 import com.codearms.maoqiqi.databinding.binding
+import com.codearms.maoqiqi.log.LogUtils
 import com.codearms.maoqiqi.one.base.BaseFragment
 import com.codearms.maoqiqi.one.music.R
 import com.codearms.maoqiqi.one.music.databinding.FragmentMusicListBinding
@@ -27,21 +28,27 @@ class MusicListFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        position = arguments?.getInt("position") ?: 0
         setHasOptionsMenu(true)
+        position = arguments?.getInt("position") ?: 0
         binding.tv.text = "MusicListFragment:$position"
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        // if (parentFragment != null && !parentFragment!!.userVisibleHint) return
-        when (position) {
-            MusicUtils.TYPE_SONG -> inflater.inflate(R.menu.menu_songs_sort_by, menu)
-            MusicUtils.TYPE_ARTIST -> inflater.inflate(R.menu.menu_artist_sort_by, menu)
-            MusicUtils.TYPE_ALBUM -> inflater.inflate(R.menu.menu_album_sort_by, menu)
-            MusicUtils.TYPE_FOLDER -> {
+        if (isShow) {
+            when (position) {
+                MusicUtils.TYPE_SONG -> inflater.inflate(R.menu.menu_songs_sort_by, menu)
+                MusicUtils.TYPE_ARTIST -> inflater.inflate(R.menu.menu_artist_sort_by, menu)
+                MusicUtils.TYPE_ALBUM -> inflater.inflate(R.menu.menu_album_sort_by, menu)
+                MusicUtils.TYPE_FOLDER -> {
+                }
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (isShow) LogUtils.v(logInfo, "item:${item.itemId}")
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {
@@ -50,6 +57,7 @@ class MusicListFragment : BaseFragment() {
             args.putInt("position", position)
             val fragment = MusicListFragment()
             fragment.arguments = args
+            fragment.logInfo = LogUtils.LogInfo("MusicListFragment$position")
             return fragment
         }
     }
