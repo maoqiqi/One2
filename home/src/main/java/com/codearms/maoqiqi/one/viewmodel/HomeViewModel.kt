@@ -1,17 +1,12 @@
 package com.codearms.maoqiqi.one.viewmodel
 
-import android.util.Log
+import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import com.codearms.maoqiqi.log.LogUtils
 import com.codearms.maoqiqi.one.OneRepository
 import com.codearms.maoqiqi.one.base.BaseViewModel
 import com.codearms.maoqiqi.one.bean.BannerBean
-import com.codearms.maoqiqi.one.bean.CommonBean
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class HomeViewModel : BaseViewModel() {
 
@@ -24,17 +19,11 @@ class HomeViewModel : BaseViewModel() {
     val banner: LiveData<List<BannerBean>> = _banner
 
     fun getBanner() {
-        viewModelScope.launch {
-            OneRepository().getBanner().enqueue(object : Callback<CommonBean<List<BannerBean>>> {
-                override fun onResponse(call: Call<CommonBean<List<BannerBean>>>, response: Response<CommonBean<List<BannerBean>>>) {
-                    Log.e("mfq", response.body().toString())
-                    _banner.postValue(response.body()?.data)
-                }
-
-                override fun onFailure(call: Call<CommonBean<List<BannerBean>>>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-            })
+        LogUtils.e("====" + (Looper.getMainLooper().thread == Thread.currentThread()))
+        request({ OneRepository().getBanner() }) {
+            LogUtils.e("====" + (Looper.getMainLooper().thread == Thread.currentThread()))
+            LogUtils.e(it.toString())
+            _banner.value = it
         }
     }
 }

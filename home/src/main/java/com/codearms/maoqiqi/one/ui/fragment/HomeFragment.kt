@@ -1,6 +1,7 @@
 package com.codearms.maoqiqi.one.ui.fragment
 
 import android.os.Bundle
+import android.os.Looper
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
@@ -81,12 +82,14 @@ class HomeFragment : BaseFragment() {
     override fun loadData() {
         super.loadData()
         binding.swipeRefreshLayout.isRefreshing = true
+        LogUtils.e("====" + (Looper.getMainLooper().thread == Thread.currentThread()))
         viewModel.getBanner()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        if (isShow) inflater.inflate(R.menu.menu_home, menu)
+        if (isShow) inflater.inflate(R.menu.menu_search, menu)
+        // if (isShow) inflater.inflate(R.menu.menu_home, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
