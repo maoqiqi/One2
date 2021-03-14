@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Home</string>
     <string name="classify">分类</string>
+    <!-- =========================== 首页资源开始 =========================== -->
+    <string name="useful_sites">常用网站</string>
+    <string name="search">搜索</string>
+    <string name="navigation">导航</string>
+    <string name="we_chat">公众号</string>
+    <string name="knowledge">知识体系</string>
+    <string name="project">项目</string>
+
+    <string name="_new">新</string>
+    <string name="just">刚刚</string>
+    <string name="minute">分钟</string>
+    <string name="hour">小时</string>
+    <string name="one_day">1天</string>
+
+    <string name="please_login">请先登录</string>
+    <string name="success_to_collect">收藏成功</string>
+    <string name="success_to_un_collect">取消收藏成功</string>
+
+    <string name="top_search">热门搜索</string>
+    <string name="search_clean">清空搜索历史</string>
+    <string name="prompt_search_empty">搜素内容不能为空</string>
+    <!-- =========================== 首页资源结束 =========================== -->
 </resources>

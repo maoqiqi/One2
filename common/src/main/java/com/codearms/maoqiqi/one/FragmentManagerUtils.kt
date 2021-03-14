@@ -14,6 +14,12 @@ object FragmentManagerUtils {
         fragment?.let { if (it.isAdded) ft.show(it).commit() else ft.add(container, it, tag).commit() }
     }
 
+    fun Fragment.addFragment(container: Int, newFragment: Fragment?, tag: String? = null, savedInstanceState: Bundle? = null) {
+        val fragment = if (savedInstanceState == null) newFragment else childFragmentManager.findFragmentByTag(tag)
+        val ft = childFragmentManager.beginTransaction()
+        fragment?.let { if (it.isAdded) ft.show(it).commit() else ft.add(container, it, tag).commit() }
+    }
+
     @JvmOverloads
     @JvmStatic
     fun FragmentActivity.switchFragment(container: Int, from: Fragment?, to: Fragment?, tag: String? = null): Fragment? {

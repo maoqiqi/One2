@@ -47,7 +47,6 @@ class NewsFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         binding.appBarLayout.addOnOffsetChangedListener(object : AppBarStateChangeListener(true) {
             override fun onStateChanged(appBarLayout: AppBarLayout, state: State, percentage: Float) {
                 appBarLayout.setBackgroundResource(getAppBarLayoutBackgroundResource(state, percentage))

@@ -1,5 +1,6 @@
 package com.codearms.maoqiqi.one.base
 
+import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -15,15 +16,28 @@ import com.codearms.maoqiqi.log.LogUtils
 abstract class BaseFragment : LogFragment() {
 
     init {
-        logInfo = LogUtils.LogInfo(javaClass.simpleName, true, false)
+        logInfo = LogUtils.LogInfo(javaClass.simpleName, false, false)
     }
 
     protected var isShow = false
+    protected var isCompleted = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onResume() {
         super.onResume()
         isShow = true
         LogUtils.v(logInfo, "onResume:isShow:$isShow")
+        if (!isCompleted) {
+            loadData()
+        }
+    }
+
+    protected open fun loadData() {
+
     }
 
     override fun onPause() {

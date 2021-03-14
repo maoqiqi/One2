@@ -38,7 +38,6 @@ class MusicFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         // 解决滑动到顶部还显示部分标题
         val layoutParams = binding.view.layoutParams
         val viewHeight = layoutParams.height

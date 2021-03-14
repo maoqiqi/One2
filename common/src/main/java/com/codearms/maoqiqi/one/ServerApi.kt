@@ -1,6 +1,7 @@
 package com.codearms.maoqiqi.one
 
 import com.codearms.maoqiqi.one.bean.*
+import retrofit2.Call
 import retrofit2.http.*
 
 interface ServerApi {
@@ -10,28 +11,28 @@ interface ServerApi {
      * @return Banner数据
      */
     @GET("banner/json")
-    fun getBanner(): CommonBean<List<BannerBean>>
+    fun getBanner(): Call<CommonBean<List<BannerBean>>>
 
     /**
      * 常用网站(https://www.wanandroid.com/friend/json)
      * @return 常用网站数据
      */
     @GET("friend/json")
-    fun getUsefulSites(): CommonBean<List<UsefulSitesBean>>
+    fun getUsefulSites(): Call<CommonBean<List<UsefulSitesBean>>>
 
     /**
      * 热词(https://www.wanandroid.com/hotkey/json)
      * @return 热词数据
      */
     @GET("hotkey/json")
-    fun getHotKey(): CommonBean<List<HotKeyBean>>
+    fun getHotKey(): Call<CommonBean<List<HotKeyBean>>>
 
     /**
      * 置顶文章(https://www.wanandroid.com/article/top/json)
      * @return 置顶文章数据
      */
     @GET("article/top/json")
-    fun getTopArticles(): CommonBean<List<ArticleBean>>
+    fun getTopArticles(): Call<CommonBean<List<ArticleBean>>>
 
     /**
      * 首页文章列表(https://www.wanandroid.com/article/list/0/json)
@@ -39,21 +40,21 @@ interface ServerApi {
      * @return 文章列表数据
      */
     @GET("article/list/{page}/json")
-    fun getArticles(@Path("page") page: Int): CommonBean<ArticleBeans>
+    fun getArticles(@Path("page") page: Int): Call<CommonBean<ArticleBeans>>
 
     /**
      * 导航数据(https://www.wanandroid.com/navi/json)
      * @return 导航数据
      */
     @GET("navi/json")
-    fun getNavigation(): CommonBean<List<NavigationBean>>
+    fun getNavigation(): Call<CommonBean<List<NavigationBean>>>
 
     /**
      * 获取公众号列表(https://wanandroid.com/wxarticle/chapters/json)
      * @return 公众号列表数据
      */
     @GET("wxarticle/chapters/json")
-    fun getWxList(): CommonBean<List<ChildClassifyBean>>
+    fun getWxList(): Call<CommonBean<List<ChildClassifyBean>>>
 
     /**
      * 查看某个公众号历史数据(https://wanandroid.com/wxarticle/list/408/1/json)
@@ -62,7 +63,7 @@ interface ServerApi {
      * @return 查看某个公众号历史数据
      */
     @GET("wxarticle/list/{id}/{page}/json")
-    fun getWxArticles(@Path("id") id: Int, @Path("page") page: Int): CommonBean<ArticleBeans>
+    fun getWxArticles(@Path("id") id: Int, @Path("page") page: Int): Call<CommonBean<ArticleBeans>>
 
     /**
      * 在某个公众号中搜索历史文章(https://wanandroid.com/wxarticle/list/405/1/json?k=Java)
@@ -72,14 +73,14 @@ interface ServerApi {
      * @return 指定搜索内容, 搜索当前公众号的某页的此类数据
      */
     @GET("wxarticle/list/{id}/{page}/json")
-    fun getWxSearchArticles(@Path("id") id: Int, @Path("page") page: Int, @Query("k") k: String?): CommonBean<Any>
+    fun getWxSearchArticles(@Path("id") id: Int, @Path("page") page: Int, @Query("k") k: String?): Call<CommonBean<Any>>
 
     /**
      * 知识体系(https://www.wanandroid.com/tree/json)
      * @return 知识体系数据
      */
     @GET("tree/json")
-    fun getKnowledge(): CommonBean<List<ParentClassifyBean>>
+    fun getKnowledge(): Call<CommonBean<List<ParentClassifyBean>>>
 
     /**
      * 知识体系下的文章(https://www.wanandroid.com/article/list/0/json?cid=60)
@@ -88,14 +89,14 @@ interface ServerApi {
      * @return 知识体系下的文章数据
      */
     @GET("article/list/{page}/json")
-    fun getKnowledgeArticles(@Path("page") page: Int, @Query("cid") cid: Int): CommonBean<ArticleBeans>
+    fun getKnowledgeArticles(@Path("page") page: Int, @Query("cid") cid: Int): Call<CommonBean<ArticleBeans>>
 
     /**
      * 项目分类(https://www.wanandroid.com/project/tree/json)
      * @return 项目分类数据
      */
     @GET("project/tree/json")
-    fun getProject(): CommonBean<List<ChildClassifyBean>>
+    fun getProject(): Call<CommonBean<List<ChildClassifyBean>>>
 
     /**
      * 项目列表数据(https://www.wanandroid.com/project/list/1/json?cid=294)
@@ -104,7 +105,7 @@ interface ServerApi {
      * @return 项目类别数据
      */
     @GET("project/list/{page}/json")
-    fun getProjectArticles(@Path("page") page: Int, @Query("cid") cid: Int): CommonBean<ArticleBeans>
+    fun getProjectArticles(@Path("page") page: Int, @Query("cid") cid: Int): Call<CommonBean<ArticleBeans>>
 
     /**
      * 登录(https://www.wanandroid.com/user/login)
@@ -114,7 +115,7 @@ interface ServerApi {
      */
     @POST("user/login")
     @FormUrlEncoded
-    fun login(@Field("username") username: String?, @Field("password") password: String?): CommonBean<UserBean>
+    fun login(@Field("username") username: String?, @Field("password") password: String?): Call<CommonBean<UserBean>>
 
     /**
      * 注册(https://www.wanandroid.com/user/register)
@@ -129,14 +130,14 @@ interface ServerApi {
         @Field("username") username: String?,
         @Field("password") password: String?,
         @Field("repassword") repassword: String?
-    ): CommonBean<UserBean>
+    ): Call<CommonBean<UserBean>>
 
     /**
      * 退出(https://www.wanandroid.com/user/logout/json)
      *
      * @return 退出
      */
-    fun logout(): CommonBean<Any>
+    fun logout(): Call<CommonBean<Any>>
 
     /**
      * 收藏文章列表(https://www.wanandroid.com/lg/collect/list/0/json)
@@ -145,7 +146,7 @@ interface ServerApi {
      * @return 收藏文章列表数据
      */
     @GET("lg/collect/list/{page}/json")
-    fun getCollect(@Path("page") page: Int): CommonBean<ArticleBeans>
+    fun getCollect(@Path("page") page: Int): Call<CommonBean<ArticleBeans>>
 
     /**
      * 收藏站内文章(https://www.wanandroid.com/lg/collect/1165/json)
@@ -153,7 +154,7 @@ interface ServerApi {
      * @return 收藏站内文章
      */
     @POST("lg/collect/{id}/json")
-    fun collect(@Path("id") id: Int): CommonBean<Any>
+    fun collect(@Path("id") id: Int): Call<CommonBean<Any>>
 
     /**
      * 收藏站外文章(https://www.wanandroid.com/lg/collect/add/json)
@@ -168,7 +169,7 @@ interface ServerApi {
         @Field("title") title: String?,
         @Field("author") author: String?,
         @Field("link") link: String?
-    ): CommonBean<ArticleBean>
+    ): Call<CommonBean<ArticleBean>>
 
     /**
      * 取消收藏[文章列表](https://www.wanandroid.com/lg/uncollect_originId/2333/json)
@@ -176,7 +177,7 @@ interface ServerApi {
      * @return 取消收藏
      */
     @POST("lg/uncollect_originId/{id}/json")
-    fun unCollect(@Path("id") id: Int): CommonBean<Any>
+    fun unCollect(@Path("id") id: Int): Call<CommonBean<Any>>
 
     /**
      * 取消收藏[我的收藏页面](https://www.wanandroid.com/lg/uncollect/2805/json)
@@ -186,14 +187,14 @@ interface ServerApi {
      */
     @POST("lg/uncollect/{id}/json")
     @FormUrlEncoded
-    fun unCollect(@Path("id") id: Int, @Field("originId") originId: Int): CommonBean<Any>
+    fun unCollect(@Path("id") id: Int, @Field("originId") originId: Int): Call<CommonBean<Any>>
 
     /**
      * 收藏网站列表(https://www.wanandroid.com/lg/collect/usertools/json)
      * @return 收藏网站列表数据
      */
     @GET("lg/collect/usertools/json")
-    fun getCollectUrl(): CommonBean<Any>
+    fun getCollectUrl(): Call<CommonBean<Any>>
 
     /**
      * 收藏网址(https://www.wanandroid.com/lg/collect/addtool/json)
@@ -203,7 +204,7 @@ interface ServerApi {
      */
     @POST("lg/collect/addtool/json")
     @FormUrlEncoded
-    fun collectUrl(@Field("name") name: String?, @Field("link") link: String?): CommonBean<Any>
+    fun collectUrl(@Field("name") name: String?, @Field("link") link: String?): Call<CommonBean<Any>>
 
     /**
      * 编辑收藏网站(https://www.wanandroid.com/lg/collect/updatetool/json)
@@ -214,7 +215,7 @@ interface ServerApi {
      */
     @POST("lg/collect/updatetool/json")
     @FormUrlEncoded
-    fun collectUrl(@Field("id") id: Int, @Field("name") name: String?, @Field("link") link: String?): CommonBean<Any>
+    fun collectUrl(@Field("id") id: Int, @Field("name") name: String?, @Field("link") link: String?): Call<CommonBean<Any>>
 
     /**
      * 删除收藏网站(https://www.wanandroid.com/lg/collect/deletetool/json)
@@ -223,7 +224,7 @@ interface ServerApi {
      */
     @POST("lg/collect/deletetool/json")
     @FormUrlEncoded
-    fun unCollectUrl(@Field("id") id: Int): CommonBean<Any>
+    fun unCollectUrl(@Field("id") id: Int): Call<CommonBean<Any>>
 
     /**
      * 搜索(https://www.wanandroid.com/article/query/0/json)
@@ -233,5 +234,5 @@ interface ServerApi {
      */
     @POST("article/query/0/json")
     @FormUrlEncoded
-    fun query(@Field("page") page: Int, @Field("k") k: String?): CommonBean<ArticleBeans>
+    fun query(@Field("page") page: Int, @Field("k") k: String?): Call<CommonBean<ArticleBeans>>
 }

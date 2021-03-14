@@ -28,7 +28,6 @@ class MusicListFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
         position = arguments?.getInt("position") ?: 0
         binding.tv.text = "MusicListFragment:$position"
     }

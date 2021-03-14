@@ -42,7 +42,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                     <com.youth.banner.Banner
                         android:id="@+id/banner"
@@ -50,24 +50,163 @@
                         android:layout_height="@dimen/dp_200"
                         android:background="@color/bg"
                         app:banner_auto_loop="true"
+                        app:banner_indicator_gravity="right"
+                        app:banner_indicator_marginBottom="@dimen/dp_11"
+                        app:banner_indicator_marginRight="@dimen/dp_8"
                         app:banner_indicator_normal_color="@color/white"
-                        app:banner_indicator_normal_width="6dp"
+                        app:banner_indicator_normal_width="@dimen/dp_6"
                         app:banner_indicator_selected_color="@color/color_home"
-                        app:banner_indicator_selected_width="10dp"
+                        app:banner_indicator_selected_width="@dimen/dp_10"
+                        app:banner_infinite_loop="true"
                         app:banner_loop_time="5000"
-                        app:layout_constraintBottom_toTopOf="@id/container"
+                        app:layout_constraintBottom_toTopOf="@id/tv_useful_sites"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+                    <TextView
+                        android:id="@+id/tv_useful_sites"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_light_selector"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="@string/useful_sites"
+                        android:textAppearance="@style/song"
+                        android:textColor="@color/color_text_main_selector"
+                        android:textSize="@dimen/sp_10"
+                        app:drawableTint="@color/color_home"
+                        app:drawableTopCompat="@drawable/ic_useful_sites"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/line1"
+                        app:layout_constraintTop_toBottomOf="@id/banner" />
+
+                    <View
+                        android:id="@+id/line1"
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_useful_sites"
+                        app:layout_constraintLeft_toRightOf="@id/tv_useful_sites"
+                        app:layout_constraintRight_toLeftOf="@id/tv_navigation"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <TextView
+                        android:id="@+id/tv_navigation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_light_selector"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="@string/navigation"
+                        android:textAppearance="@style/song"
+                        android:textColor="@color/color_text_main_selector"
+                        android:textSize="@dimen/sp_10"
+                        app:drawableTint="@color/color_navigation"
+                        app:drawableTopCompat="@drawable/ic_navigation"
+                        app:layout_constraintLeft_toRightOf="@id/line1"
+                        app:layout_constraintRight_toLeftOf="@id/line2"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_useful_sites"
+                        app:layout_constraintLeft_toRightOf="@id/tv_navigation"
+                        app:layout_constraintRight_toLeftOf="@id/tv_we_chat"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <TextView
+                        android:id="@+id/tv_we_chat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_light_selector"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="@string/we_chat"
+                        android:textAppearance="@style/song"
+                        android:textColor="@color/color_text_main_selector"
+                        android:textSize="@dimen/sp_10"
+                        app:drawableTint="@color/success"
+                        app:drawableTopCompat="@drawable/ic_we_chat_number"
+                        app:layout_constraintLeft_toRightOf="@id/line2"
+                        app:layout_constraintRight_toLeftOf="@id/line3"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <View
+                        android:id="@+id/line3"
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_useful_sites"
+                        app:layout_constraintLeft_toRightOf="@id/tv_we_chat"
+                        app:layout_constraintRight_toLeftOf="@id/tv_knowledge"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <TextView
+                        android:id="@+id/tv_knowledge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_light_selector"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="@string/knowledge"
+                        android:textAppearance="@style/song"
+                        android:textColor="@color/color_text_main_selector"
+                        android:textSize="@dimen/sp_10"
+                        app:drawableTint="@color/color_news"
+                        app:drawableTopCompat="@drawable/ic_knowledge"
+                        app:layout_constraintLeft_toRightOf="@id/line3"
+                        app:layout_constraintRight_toLeftOf="@id/line4"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <View
+                        android:id="@+id/line4"
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_useful_sites"
+                        app:layout_constraintLeft_toRightOf="@id/tv_knowledge"
+                        app:layout_constraintRight_toLeftOf="@id/tv_project"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
+                    <TextView
+                        android:id="@+id/tv_project"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_light_selector"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/dp_12"
+                        android:paddingBottom="@dimen/dp_12"
+                        android:text="@string/project"
+                        android:textAppearance="@style/song"
+                        android:textColor="@color/color_text_main_selector"
+                        android:textSize="@dimen/sp_10"
+                        app:drawableTint="@color/color_text_main"
+                        app:drawableTopCompat="@drawable/ic_project"
+                        app:layout_constraintLeft_toRightOf="@id/line4"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_useful_sites" />
+
                     <FrameLayout
                         android:id="@+id/container"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="match_parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/banner" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_useful_sites" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.core.widget.NestedScrollView>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
