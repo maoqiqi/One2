@@ -10,8 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codearms.maoqiqi.one.ImageLoader.displayImage
-import com.codearms.maoqiqi.one.MarginItemDecoration
+import com.codearms.maoqiqi.one.ListFragment
 import com.codearms.maoqiqi.one.bean.ArticleBean
+import com.codearms.maoqiqi.one.decoration.MarginItemDecoration
 import com.codearms.maoqiqi.one.home.R
 import com.codearms.maoqiqi.one.home.databinding.ItemArticlesBinding
 import com.codearms.maoqiqi.one.viewmodel.ArticlesViewModel
@@ -44,7 +45,7 @@ class ArticlesFragment : ListFragment() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             isNestedScrollingEnabled = false
-//            setHasFixedSize(true)
+            setHasFixedSize(true)
             adapter = articlesAdapter
             addItemDecoration(MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.dp_12)))
         }

@@ -56,6 +56,9 @@ project.ext {
             // ARouter
             implementation 'com.alibaba:arouter-api:1.5.1'
             kapt 'com.alibaba:arouter-compiler:1.5.1'
+            // refresh
+            implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+            implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
             implementation 'com.codearms.maoqiqi:lib-log:1.0.1'
         }
     }

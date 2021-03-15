@@ -1,4 +1,4 @@
-package com.codearms.maoqiqi.one.ui.fragment
+package com.codearms.maoqiqi.one
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.codearms.maoqiqi.databinding.binding
 import com.codearms.maoqiqi.one.base.BaseFragment
-import com.codearms.maoqiqi.one.home.R
-import com.codearms.maoqiqi.one.home.databinding.FragmentListBinding
+import com.codearms.maoqiqi.one.common.R
+import com.codearms.maoqiqi.one.common.databinding.FragmentListBinding
 
 abstract class ListFragment : BaseFragment() {
 

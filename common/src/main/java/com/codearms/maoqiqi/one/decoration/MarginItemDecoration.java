@@ -1,4 +1,4 @@
-package com.codearms.maoqiqi.one;
+package com.codearms.maoqiqi.one.decoration;
 
 import android.annotation.SuppressLint;
 import android.graphics.Rect;
