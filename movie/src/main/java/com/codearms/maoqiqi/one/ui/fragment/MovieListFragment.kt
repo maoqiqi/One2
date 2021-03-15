@@ -36,10 +36,10 @@ class MovieListFragment : ListFragment() {
         binding.recyclerView.apply {
 //            layoutManager = LinearLayoutManager(requireContext())/*.apply { orientation=LinearLayoutManager.HORIZONTAL }*/
             layoutManager = GridLayoutManager(requireContext(), 3).apply { orientation = LinearLayoutManager.HORIZONTAL }
-//            isNestedScrollingEnabled = false
-//            setHasFixedSize(true)
+            isNestedScrollingEnabled = false
+            setHasFixedSize(true)
             adapter = movieAdapter
-            addItemDecoration(RecyclerViewItemDecoration(10, 20, 30, 40, 100))
+            addItemDecoration(RecyclerViewItemDecoration(10, 20, 30, 10, 50))
         }
     }
 
@@ -73,6 +73,8 @@ class MovieListFragment : ListFragment() {
 
         override fun onBindViewHolder(holder: DataBindingViewHolder<ItemMovieListBinding>, position: Int) {
             holder.binding.tvMovieTitle.text = data[position]
+            holder.binding.executePendingBindings()
+            holder.binding.lifecycleOwner = viewLifecycleOwner
         }
 
         override fun getItemCount(): Int = data.size
